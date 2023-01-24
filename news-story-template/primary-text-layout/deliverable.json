@@ -1,10 +1,6 @@
 {
   "entrypoints": [
     {
-      "name": "starter file",
-      "file": "/starter-file/index.html"
-    },
-    {
       "name": "mobile responsive strategy",
       "file": "index.html"
     }
