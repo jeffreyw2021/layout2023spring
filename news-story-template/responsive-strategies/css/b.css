@@ -1,4 +1,4 @@
-.source{
+.datesource{
     margin-top: 15px;
 }
 
@@ -39,12 +39,12 @@
         column-gap: 20px;
     }
 
-    .pic-link:img{
+    img{
         width: 45%;
         height: auto;
     }
 
-    .source{
+    .datesource{
         margin-top: 0;
     }
 

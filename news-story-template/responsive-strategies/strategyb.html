@@ -53,9 +53,7 @@
 
             <div class="story-item">
               <!-- Story image -->
-              <a class="pic-link" v-bind:href="story.url">
-                <img v-bind:src="story.image">     
-              </a>
+                <img v-bind:src="story.image">
 
               <div class="text-content">
                 <!-- Story description -->
@@ -73,9 +71,9 @@
                 </p>
                 
                 <!-- Story date + source -->
-                  <span class="source">
-                    <a v-bind:href="story.source.url">{{ story.date }} | {{ story.source.name }}</a>
-                  </span>
+                <span class="source">
+                  <a v-bind:href="story.source.url">{{ story.date }} | {{ story.source.name }}</a>
+                </span>
               </div>
             </div>
 
