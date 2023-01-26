@@ -13,21 +13,18 @@ img {
         padding: 0;
     }
 
-    .story-list{
-      display: flex;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      width: 100%;
-      gap: 40px 40px;
-
-    }
-
     li{
         border: none;
         flex: 1 1 250px;
     }
     
-    
+    .story-list{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 40px 40px;
+      }
 }
 
 @media (min-width: 1024px){
