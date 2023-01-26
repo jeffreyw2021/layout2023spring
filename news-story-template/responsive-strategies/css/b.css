@@ -12,6 +12,7 @@
 
 /* responsive layout */
 
+/* small */
 @media (min-width: 720px){
     body{
         width: 80%;
@@ -49,6 +50,7 @@
 
 }
 
+/* big */
 @media (min-width: 1024px){
     body{
         max-width: 1350px;
