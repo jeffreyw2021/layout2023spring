@@ -1,0 +1,147 @@
+body { 
+    max-width: 100%; 
+    margin:auto;
+}
+
+pre {
+    display:none;
+}
+
+.featured-story {
+    display:none;
+}
+
+.story-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.story-list article {
+    margin: 2rem 0;
+}
+
+.story-list article > :first-child {
+    margin-top: 0px;
+}
+
+.story-list article > :last-child {
+    margin-bottom: 0px;
+}
+
+.story-list li:last-child hr{
+    display:none;
+}
+
+img{
+    margin: 0;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+}
+
+.story-list h2{
+    margin:0;
+    font-weight:600;
+}
+
+.story-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.01s ease;
+}
+
+.story-title:hover{
+    color:#48ea12;
+}
+
+.desc{
+    color:#2a2a2a;
+    font-family:"helvetica neue";
+    font-weight:300;
+    line-height: 18px;
+}
+
+.content{
+    color:#808080;
+    font-family:"helvetica neue";
+    font-weight:200;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.source{
+    color:#808080;
+    font-family:"helvetica neue";
+    font-weight:200;
+}
+
+.story{
+    list-style: none;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    padding: 36px;
+    background: linear-gradient(
+     white, white 50%, #333 50%, #333
+     );
+     transition: all 0.3s ease;
+     background-size: 100% 200%;
+    /* animation: down-bump 0.4s ease; */
+}
+
+.story:hover{
+    animation: up-bump 0.4s ease;
+    background-position: 100% 100%;
+}
+
+.story:hover .content{
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.story:hover .desc{
+    color:white;
+    opacity:0.87;
+}
+
+.story:hover .desc:hover{
+    color:white;
+    opacity:1;
+}
+
+.story:hover h2{
+    color:#48ad26;
+    transition: all 0.4s ease;
+}
+
+.story:hover .source{
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.story:hover .content:hover,
+.story:hover .source:hover{
+    color:white;
+}
+
+.story:hover img:hover{
+    filter:brightness(1.3);
+}
+
+hr{
+    margin-top:2rem;
+}
+
+/* animation */
+
+@keyframes up-bump {
+    0% { padding-top: 2em; }
+    50% { padding-top: 1.5em; }
+    100% { padding-top: 2em; }
+  }
+  @keyframes down-bump {
+    0% { padding-top: 2em; }
+    50% { padding-top: 2.5em; }
+    100% { padding-top: 2em; }
+  }
