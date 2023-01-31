@@ -25,11 +25,15 @@ img {
     
     .story-list{
         display: flex;
-        align-items: flex-start;
+        align-items: stretch;
         flex-wrap: wrap;
         width: 100%;
         gap: 40px 40px;
       }
+
+    .story-list .story{
+        height: auto;
+    }
 }
 
 /* big */
