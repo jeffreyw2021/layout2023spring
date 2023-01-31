@@ -50,7 +50,11 @@ img{
     transition: all 0.01s ease;
 }
 
-.story-title:hover{
+a .story-title{
+    transition: all 0.01s ease;
+}
+
+.story:hover .story-title:hover{
     color:#48ea12;
 }
 

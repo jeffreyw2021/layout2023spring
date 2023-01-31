@@ -43,12 +43,13 @@
       <ul class="story-list">
         <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
         <li class="story" v-for="story in stories">
+        <a v-bind:href="story.url">
 
         <article>
 
             <!-- Story title (linked) -->
-            <h2>
-                <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
+            <h2 class="story-title">
+              {{ story.title }}
             </h2>
 
             <div class="story-item">
@@ -58,21 +59,17 @@
               <div class="text-content">
                 <!-- Story description -->
                 <p class="desc">
-                  <a v-bind:href="story.url">
                     {{ story.description }}
-                  </a>
                 </p>
 
                 <!-- Story content (truncated) -->
                 <p class="content">
-                  <a v-bind:href="story.url">
                     <span v-html="story.content"></span>
-                  </a>
                 </p>
                 
                 <!-- Story date + source -->
                 <span class="source">
-                  <a v-bind:href="story.source.url">{{ story.date }} | {{ story.source.name }}</a>
+                  {{ story.date }} | {{ story.source.name }}
                 </span>
               </div>
             </div>
@@ -80,6 +77,7 @@
             <!-- <hr/> -->
 
         </article>
+        </a>
         </li>
       </ul>
 

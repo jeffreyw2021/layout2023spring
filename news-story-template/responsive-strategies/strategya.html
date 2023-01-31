@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Strategy A</title>
     <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
-    <link rel="stylesheet" href="css/styles.css"></link>
-    <link rel="stylesheet" href="css/a.css"></link>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/a.css">
   </head>
   <body>
 
@@ -44,39 +45,34 @@
         <ul class="story-list">
           <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
           <li class="story" v-for="story in stories">
-
+          <a v-bind:href="story.url">
           <article class="item">
 
               <!-- Story title (linked) -->
-              <h2>
-                  <a class="story-title" v-bind:href="story.url">{{ story.title }}</a>
+              <h2 class="story-title">
+                {{ story.title }}
               </h2>
 
               <!-- Story description -->
               <p class="desc">
-                <a v-bind:href="story.url">
-                  {{ story.description }}
-                </a>
+                {{ story.description }}
               </p>
 
               <!-- Story image -->
-              <a v-bind:href="story.url">
-                <img v-bind:src="story.image">
-              </a>
+              <img v-bind:src="story.image">
 
               <!-- Story content (truncated) -->
               <p class="content">
-                <a v-bind:href="story.url">
-                  <span v-html="story.content"></span>
-                </a>
+                <span v-html="story.content"></span>
               </p>
               
               <!-- Story date + source -->
               <span class="source">
-                <a v-bind:href="story.source.url">{{ story.date }} | {{ story.source.name }}</a>
+                {{ story.date }} | {{ story.source.name }}
               </span>
 
           </article>
+          </a>
           </li>
         </ul>
 
