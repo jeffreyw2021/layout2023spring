@@ -35,13 +35,14 @@
     .story-item{
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         column-gap: 20px;
     }
 
     img{
         width: 45%;
         height: auto;
+        /* flex: 0 0 45%; */
     }
 
     .datesource{

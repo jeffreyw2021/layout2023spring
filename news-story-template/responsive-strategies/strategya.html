@@ -85,20 +85,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
 
-    <!-- <script>
-      var lis = document.querySelectorAll('li');
-      var maxHeight = 0;
+    <!-- create a placeholder for the last row of 
+      layout when there's odd number of stories -->
+    <script>
+      var ul = document.querySelector('ul');
+      var lis = ul.querySelectorAll('li');
 
-      for (var i = 0; i < lis.length; i++) {
-        if (lis[i].offsetHeight > maxHeight) {
-          maxHeight = lis[i].offsetHeight;
-        }
+      if (lis.length % 2 !== 0) {
+        var li = document.createElement('li');
+        li.classList.add('placeholder');
+        ul.appendChild(li);
       }
-
-      for (var i = 0; i < lis.length; i++) {
-        lis[i].style.height = maxHeight + 'px';
-      }
-    </script> -->
+    </script>
     
   </body>
 </html>

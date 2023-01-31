@@ -102,7 +102,13 @@ a .story-title{
     /* animation: down-bump 0.4s ease; */
 }
 
-.story:hover{
+.placeholder{
+    list-style: none;
+    margin-bottom: 1%;
+    padding: 36px;
+}
+
+.story:hover {
     animation: up-bump 0.3s ease;
     background-position: 100% 100%;
 }
