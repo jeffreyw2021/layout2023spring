@@ -1,5 +1,5 @@
 body { 
-    max-width: 100%; 
+    max-width: 80%; 
     margin:auto;
 }
 
@@ -142,7 +142,7 @@ hr{
 /* small */
 @media (min-width: 720px){
     body{
-        width: 80%;
+        max-width: 80%;
         padding: 0;
     }
 
@@ -167,7 +167,8 @@ hr{
 /* big */
 @media (min-width: 1024px){
     body{
-        max-width: 1315px;
+        max-width: 80%;
+        padding: 0;
     }
 
     li{

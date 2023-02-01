@@ -27,7 +27,7 @@
                     <div class="story-item">
 
                         <!-- Story image -->
-                        <img v-bind:src="featuredStory.image">
+                        <img id="fimg-front" v-bind:src="featuredStory.image">
                     
                         <div class="text-content">
                             <!-- Story description -->
@@ -46,6 +46,8 @@
                                 {{ featuredStory.date }} | {{ featuredStory.source.name }}
                             </span>
                         </div>
+
+                        <img id="fimg-back" v-bind:src="featuredStory.image">
                     </div>
 
                 </article>
