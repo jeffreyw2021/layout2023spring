@@ -3,36 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Featured Story Version A</title>
+    <title>Featured Story Version B</title>
     <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/a.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/b.css">
   </head>
   <body>
 
     <div id="news-stories-list-template" v-cloak>
 
-      <!-- The Featured Story -->
-      <div class="featured-story">
         <h1>Featured Story</h1>
 
-        <a v-bind:href="featuredStory.url">{{ featuredStory.title }}</a>
-        
-        <!-- Story description -->
-        {{ featuredStory.description }}
+        <!-- The Featured Story -->
+        <div class="featured-story">
 
-        <!-- Story date -->
-        {{ featuredStory.date }}
+            <a v-bind:href="featuredStory.url">
+                <article class="story">
 
-        <!-- Story image -->
-        <img v-bind:src="featuredStory.image">
+                    <h2 class="story-title">
+                        {{ featuredStory.title }}
+                    </h2>
 
-        <!-- Story content (truncated) -->
-        <span v-html="featuredStory.content"></span>
+                    <div class="story-item">
 
-        <!-- Story source (linked) -->
-        <a v-bind:href="featuredStory.source.url">{{ featuredStory.source.name }}</a>
-        
+                        <!-- Story image -->
+                        <img v-bind:src="featuredStory.image">
+                    
+                        <div class="text-content">
+                            <!-- Story description -->
+                            <p class="desc">
+                            {{ featuredStory.description }}
+                            </p>
+
+                            <!-- Story content (truncated) -->
+                            <p class="content">
+                                <span v-html="featuredStory.content"></span>
+                            </p>
+
+                            <!-- Story source (linked) -->
+                            <!-- <a v-bind:href="featuredStory.source.url">{{ featuredStory.source.name }}</a> -->
+                            <span class="source">
+                                {{ featuredStory.date }} | {{ featuredStory.source.name }}
+                            </span>
+                        </div>
+                    </div>
+
+                </article>
+            </a>
       </div>
 
       <!-- Debugging info, you can comment this section out when you don't need it. -->
@@ -46,7 +63,7 @@
           <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
           <li class="story" v-for="story in stories">
           <a v-bind:href="story.url">
-          <article class="item">
+          <article>
 
               <!-- Story title (linked) -->
               <h2 class="story-title">
@@ -59,7 +76,7 @@
               </p>
 
               <!-- Story image -->
-              <img v-bind:src="story.image">
+              <img class="other-img" v-bind:src="story.image">
 
               <!-- Story content (truncated) -->
               <p class="content">
