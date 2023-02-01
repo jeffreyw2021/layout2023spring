@@ -1,0 +1,12 @@
+{
+    "entrypoints": [
+      {
+        "name": "Version A",
+        "file": "versiona.html"
+      },
+      {
+        "name": "Version B",
+        "file": "versionb.html"
+      }
+    ]
+  }
