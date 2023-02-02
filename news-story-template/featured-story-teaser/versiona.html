@@ -18,10 +18,8 @@
         <div class="featured-story">
 
             <a v-bind:href="featuredStory.url">
-                <article class="story">
+                <article class="feat-story">
                 
-                    
-
                     <h2 class="story-title">
                         {{ featuredStory.title }}
                     </h2>
@@ -47,7 +45,7 @@
 
                 </article>
             </a>
-      </div>
+        </div>
 
       <!-- Debugging info, you can comment this section out when you don't need it. -->
       <pre>The featured story object: {{ featuredStory | json }}</pre>

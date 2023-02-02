@@ -24,3 +24,50 @@ img {
     text-decoration: none;
     transition: all 0.01s ease;
 }
+
+.feat-story{
+    list-style: none;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    padding: 36px;
+    background: linear-gradient(
+     white, white 50%, #333 50%, #333
+     );
+     transition: all 0.2s ease;
+     background-size: 100% 200%;
+    /* animation: down-bump 0.4s ease; */
+}
+
+.feat-story:hover {
+    animation: up-bump 0.3s ease;
+    background-position: 100% 100%;
+}
+
+.feat-story:hover .content{
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.feat-story:hover .desc{
+    color:white;
+    opacity:0.87;
+}
+
+.feat-story:hover .desc:hover{
+    color:white;
+    opacity:1;
+}
+
+.feat-story:hover h2{
+    color:#48ad26;
+    transition: all 0.1s ease;
+}
+
+.feat-story:hover .source{
+    color:rgba(255, 255, 255, 0.7);
+}
+
+.feat-story:hover .content:hover,
+.feat-story:hover .source:hover{
+    color:white;
+}
