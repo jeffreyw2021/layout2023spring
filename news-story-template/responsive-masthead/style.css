@@ -344,9 +344,6 @@ footer a:hover{
     #menu-icon{
         display:block;
     }
-    .nav-placeholder{
-        display:none;
-    }
 
     .logo{
         margin-left: 5vh;
@@ -364,7 +361,7 @@ footer a:hover{
         right:-110%;
         width:98%;
         height:190px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+        background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.37);
