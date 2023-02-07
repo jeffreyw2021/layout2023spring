@@ -12,68 +12,69 @@
 
   <body>
 
-    <div id="news-stories-list-template" v-cloak>
+    <!-- ==================== HEADER ==================== -->
+    <header>
+      <a href="#" class="logo"><i class="fa-solid fa-radio"></i><span>ROs</span></a>
 
-        <header>
-            <a href="#" class="logo"><i class="fa-solid fa-radio"></i><span>ROs</span></a>
+      <ul class="navbar">
+          <li class="nav-btn active"><a href="#">Home</a></li>
+          <li class="nav-btn"><a href="#">About</a></li>
+          <li class="nav-btn"><a href="#">Contact</a></li>
+      </ul>
 
-            <ul class="navbar">
-                <li class="nav-btn active"><a href="#">Home</a></li>
-                <li class="nav-btn"><a href="#">About</a></li>
-                <li class="nav-btn"><a href="#">Contact</a></li>
-            </ul>
+      <div class="shrink"><i class="fa-solid fa-bars" id="menu-icon"></i></div>
+      <div class="nav-placeholder"></div>
+  </header>
+  <div class="fade-block"></div>
+  <div class="nav-block"></div>
 
-            <div class="shrink"><i class="fa-solid fa-bars" id="menu-icon"></i></div>
-        </header>
+  <!-- ==================== NEWS STORIES ==================== -->
+  <div id="news-stories-list-template" v-cloak>
 
-        <!-- ==================== FEATURED STORIES ==================== -->
-        <div class="nav-block"></div>
-        <h1>This Moment's Feature</h1>
+      <!-- ==================== FEATURED STORIES ==================== -->
+      <h1>This Moment's Feature</h1>
+      <!-- The Featured Story -->
+      <div class="featured-story">
 
-        <!-- The Featured Story -->
-        <div class="featured-story">
+          <a v-bind:href="featuredStory.url">
+              <article class="story" id="feat-story">
 
-            <a v-bind:href="featuredStory.url">
-                <article class="story" id="feat-story">
+                  <h2 class="story-title">
+                      {{ featuredStory.title }}
+                  </h2>
 
-                    <h2 class="story-title">
-                        {{ featuredStory.title }}
-                    </h2>
+                  <div class="story-item">
 
-                    <div class="story-item">
-
-                        <!-- Story image -->
-                        <img id="fimg-front" v-bind:src="featuredStory.image">
+                      <!-- Story image -->
+                      <img id="fimg-front" v-bind:src="featuredStory.image">
                     
-                        <div class="text-content">
-                            <!-- Story description -->
-                            <div>
-                                <p class="desc">
-                                    <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
-                                </p>
-                                <!-- Story content (truncated) -->
-                                <p class="content">
-                                    <span class="dd-tag">Details - </span><span v-html="featuredStory.content"></span>
-                                </p>
-                            </div>
+                      <div class="text-content">
+                          <!-- Story description -->
+                          <div>
+                              <p class="desc">
+                                  <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
+                              </p>
+                              <!-- Story content (truncated) -->
+                              <p class="content">
+                                  <span class="dd-tag">Details - </span><span v-html="featuredStory.content"></span>
+                              </p>
+                          </div>
 
-                            <!-- Story source (linked) -->
-                            <span class="source">
-                                {{ featuredStory.date }} | {{ featuredStory.source.name }}
-                            </span>
-                        </div>
+                          <!-- Story source (linked) -->
+                          <span class="source">
+                              {{ featuredStory.date }} | {{ featuredStory.source.name }}
+                          </span>
+                      </div>
 
-                        <img id="fimg-back" v-bind:src="featuredStory.image">
-                    </div>
+                      <img id="fimg-back" v-bind:src="featuredStory.image">
+                  </div>
 
-                </article>
-            </a>
+              </article>
+          </a>
       </div>
-
       <!-- <pre>The featured story object: {{ featuredStory | json }}</pre> -->
 
       <!-- ==================== OTHER STORIES ==================== -->
-
       <!-- Stories List -->
       <h1>Other Stories</h1>
       <!-- <hr/> -->
@@ -95,13 +96,13 @@
               </p>
 
               <!-- Story image -->
-              <img class="other-img" v-bind:src="story.image">
+               <img class="other-img" v-bind:src="story.image">
 
               <!-- Story content (truncated) -->
               <p class="content">
                 <span class="dd-tag">Details - </span><span v-html="story.content"></span>
               </p>
-              
+                
               <!-- Story date + source -->
               <span class="source">
                 {{ story.date }} | {{ story.source.name }}
@@ -111,10 +112,15 @@
           </a>
           </li>
           <li class="placeholder"></li>
+          <li id="bottom-pl" class="placeholder"></li>
         </ul>
-
       <!-- <pre>The stories array: {{ stories | json }}</pre> -->
-    
+    </div>
+
+    <!-- ==================== SITE INFO ==================== -->
+
+    <div class="site-info">
+
     </div>
 
     <!-- ==================== JAVASCRIPT ==================== -->
@@ -123,24 +129,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
 
-    <!-- create a placeholder when there's odd number of stories -->
+    <!-- JAVASCRIPT -->
     <script>
-      var ul = document.querySelector('ul');
-      var lis = ul.querySelectorAll('li');
 
-      if (lis.length % 2 !== 0) {
-        var li = document.createElement('li');
-        li.classList.add('placeholder');
-        ul.appendChild(li);
+      let menu = document.querySelector('#menu-icon');
+      let nav = document.querySelector('.navbar');
+
+      menu.onclick = () => {
+          nav.classList.toggle('open');
       }
-    </script>
-    <script>
-        let menu = document.querySelector('#menu-icon');
-        let nav = document.querySelector('.navbar');
-
-        menu.onclick = () => {
-            nav.classList.toggle('open');
-        }
     </script>
     
   </body>
