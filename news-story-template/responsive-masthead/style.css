@@ -58,7 +58,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
-    margin-left: 10vh;
+    margin-left: 8vh;
 }
 .logo i{
     color:white;
@@ -110,16 +110,20 @@ header{
     font-family: 'Poppins', sans-serif;
     font-size:1rem;
     font-weight:300;
+    margin-right:8vh;
     transition: all .2s ease;
 }
 
-.shrink i{
+.burger-menu{
+    display:none;
+}
+.burger-menu i{
     color:white;
     font-size: 28px;
     margin-right: 10vh;
     transition: all .2s ease;
 }
-.shrink i:hover{
+.burger-menu i:hover{
     color:#48ad26;
 }
 #menu-icon{
@@ -355,7 +359,14 @@ footer a:hover{
         font-size: 1.4rem;
     }
 
-    .shrink i{
+    .clock{
+        margin-right: 0;
+    }
+
+    .burger-menu{
+        display:flex;
+    }
+    .burger-menu i{
         margin-right: 5vh;
     }
     .fade-block{
