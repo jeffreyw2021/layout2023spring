@@ -31,6 +31,7 @@ header{
     background: linear-gradient(150deg, #333333, rgba(51, 51, 51, 0.7));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     transition: all .2s ease;
     border-radius: 40px;
 }
@@ -53,10 +54,15 @@ header{
     background: linear-gradient(#f3f0f0 40%, transparent);
 }
 
+.logo{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-left: 10vh;
+}
 .logo i{
     color:white;
     font-size: 2rem;
-    margin-left: 10vh;
     transition: all .2s ease;
 }
 .logo span{
@@ -113,6 +119,14 @@ header{
     cursor:pointer;
     z-index:102;
     display:none;
+}
+
+.nav-placeholder{
+    /* height: 40px;
+    width: 40px;
+    background-color: #f3f0f0;
+    border-radius: 50%;
+    margin-right:10px; */
 }
 
 /* ========== FEATURED STORY ========== */
@@ -282,11 +296,21 @@ a .story-title{
         display:none;
     }
 
+    .logo{
+        margin-left: 5vh;
+    }
+    .shrink i{
+        margin-right: 5vh;
+    }
+    .fade-block{
+        background: linear-gradient(#f3f0f0 10%, transparent);
+    }
+
     .navbar{
         position:absolute;
         top:100%;
-        right:-40%;
-        width:18vh;
+        right:-110%;
+        width:98%;
         height:190px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
         backdrop-filter: blur(10px);
@@ -296,6 +320,7 @@ a .story-title{
         flex-direction:column;
         justify-content: flex-start;
         align-items: center;
+        padding-left:0;
         border-radius: 15px;
         transition:all 0.8s ease;
     }
