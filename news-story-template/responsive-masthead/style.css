@@ -86,7 +86,7 @@ header{
     text-decoration: none;
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:flex-end;
 }
 .nav-btn{
     color:white;
@@ -103,6 +103,14 @@ header{
 .nav-btn:hover{
     color:#48ad26;
     animation: nav-up-bump 0.4s ease;
+}
+
+.clock{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-size:1rem;
+    font-weight:300;
+    transition: all .2s ease;
 }
 
 .shrink i{
@@ -283,7 +291,7 @@ footer{
 }
 
 hr{
-    width:90%;
+    width:100%;
     border: 1px solid #ccc;
     margin-bottom: 20px;
 }
@@ -292,7 +300,6 @@ hr{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0 5%;
     margin-bottom:20px;
 }
 .footer-business{
@@ -388,15 +395,17 @@ footer a:hover{
     .navbar.open{
         right:1%;
     }
-    hr{
-        width:100%;
-    }
     .footer-content{
         margin: 0;
         flex-direction: column;
+        align-items: center;
+    }
+    .footer-business{
+        align-items: center;
     }
     .footer-text{
         align-items: flex-start;
+        align-items: center;
     }
     .footer-icon{
         flex-direction: row;

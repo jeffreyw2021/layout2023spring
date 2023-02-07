@@ -22,8 +22,8 @@
           <li class="nav-btn"><a href="#">Contact</a></li>
       </ul>
 
+      <div class="clock"><p id="time"></p></div>
       <div class="shrink"><i class="fa-solid fa-bars" id="menu-icon"></i></div>
-      <div class="nav-placeholder"></div>
   </header>
   <div class="fade-block"></div>
   <div class="nav-block"></div>
@@ -164,6 +164,14 @@
       menu.onclick = () => {
           nav.classList.toggle('open');
       }
+
+      function updateClock() {
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        document.getElementById("time").innerText = time;
+      }
+
+      setInterval(updateClock, 1000);
     </script>
     
   </body>
