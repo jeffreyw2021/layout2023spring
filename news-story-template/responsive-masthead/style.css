@@ -121,14 +121,6 @@ header{
     display:none;
 }
 
-.nav-placeholder{
-    /* height: 40px;
-    width: 40px;
-    background-color: #f3f0f0;
-    border-radius: 50%;
-    margin-right:10px; */
-}
-
 /* ========== FEATURED STORY ========== */
 .featured-story {
     display:flex;
@@ -226,9 +218,7 @@ header{
 .placeholder{
     list-style: none;
     margin-bottom: 1%;
-    padding: 36px;
-}
-.site-info{
+    padding: 0 36px;
 }
 
 /* ---------- STORY CONTENTS ---------- */
@@ -277,6 +267,61 @@ a .story-title{
     font-family:"helvetica neue";
     font-weight:200;
     transition: all 0.01s ease;
+}
+
+/* ========== FOOTER ==========*/
+
+footer{
+    background-color: transparent;
+    width:100%;
+    padding: 20px 0;
+    text-align: flex-start;
+    font-family: 'Poppins', sans-serif;
+    font-weight:200;
+    color:#808080;
+    font-size: 14px;
+}
+
+hr{
+    width:90%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 5%;
+    margin-bottom:20px;
+}
+.footer-business{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.footer-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+footer p{
+    padding: 0;
+}
+footer a:hover{
+    color:black;
+}
+.footer-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+}
+.footer-icon a{
+    font-size: 25px;
 }
 
 /* ========== RESPONSIVE LAYOUT ==========*/
@@ -342,6 +387,23 @@ a .story-title{
 
     .navbar.open{
         right:1%;
+    }
+    hr{
+        width:100%;
+    }
+    .footer-content{
+        margin: 0;
+        flex-direction: column;
+    }
+    .footer-text{
+        align-items: flex-start;
+    }
+    .footer-icon{
+        flex-direction: row;
+        align-items: center;
+    }
+    .footer-icon i{
+        margin: 0 10px;
     }
 }
 
