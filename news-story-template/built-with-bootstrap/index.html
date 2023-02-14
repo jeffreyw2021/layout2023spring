@@ -24,68 +24,78 @@
 <body>
 
     <!-- ==================== HEADER ==================== -->
+
     <header>
-        <nav class="navbar navbar-expand-lg col-lg-11 col-md-10 col-sm-9 mx-auto mt-3 bg-dark bg-gradient rounded-pill opacity-75">
-            
-            <div class="container-fluid d-flex justify-content-between">
-                <a class="navbar-brand text-light ms-4" href="#">
-                    <i class="fa-solid fa-radio"></i>
-                </a>
+        <container class="col-12 z-3 position-fixed">
+            <nav class="mx-auto mt-4 navbar navbar-dark navbar-expand-lg col-lg-11 col-md-10 col-sm-9 bg-dark bg-gradient rounded-pill">
+    
+                <div class="container-fluid d-flex align-items-center justify-content-between">
+                    <a class="navbar-brand text-light ms-4" href="#">
+                        <i class="fa-solid fa-radio"></i>
+                    </a>
 
-                <button class="navbar-toggler mx-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                    <button class="navbar-toggler rounded-2 mx-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link link-light opacity-100 active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-light opacity-75" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-light opacity-75" href="#">Contact</a>
-                        </li>
-                    </ul>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link link-light opacity-100 active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light opacity-75" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light opacity-75" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </container>
     </header>
-    <div class="fade-block"></div>
-    <div class="nav-block"></div>
 
     <!-- ==================== NEWS STORIES ==================== -->
-    <div id="news-stories-list-template" v-cloak>
-        <div class="container mt-4">
 
+    <br><br><br>
+
+    <div id="news-stories-list-template" v-cloak>
+
+        <div class="container mt-5">
             <!-- ==================== FEATURED STORIES ==================== -->
-            <h1>This Moment's Featured</h1>
             <!-- The Featured Story -->
-            <div class="mb-5">
+            <div class="mb-5 mt-5">
 
                 <a v-bind:href="featuredStory.url" class="text-decoration-none">
 
                     <div class="card border-light rounded-4 Small shadow">
                         <div class="row d-flex align-items-center">
 
-                            <div class="col-lg-6 col-sm-12">
+                            <div>
                                 <div class="card-body">
                                     <h2 class="card-title text-black">{{ featuredStory.title }}</h2>
-                                    <p class="card-text text-black-50">
-                                        <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
-                                        <span class="dd-tag">Details - </span><span
-                                            v-html="featuredStory.content"></span>
-                                    </p>
-                                    <span class="card-link text-black-50">
-                                        {{ featuredStory.date }} | {{ featuredStory.source.name }}
-                                    </span>
-                                </div>
-                            </div>
+                                    
+                                    <div class="mt-4 d-flex align-items-start flex-lg-row-reverse flex-sm-column">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <img v-bind:src="featuredStory.image" class="img-fluid rounded-4">
+                                        </div>
 
-                            <div class="col-lg-6 col-sm-12">
-                                <img v-bind:src="featuredStory.image" class="img-fluid rounded-4">
+                                        <div class="col-lg-6 col-sm-12">
+                                            <p class="card-text text-black-50">
+                                                <span class="fw-semibold">Summary - </span>{{ featuredStory.description }}
+                                            </p>
+                                            <p class="card-text text-black-50">
+                                                <span class="fw-semibold">Details - </span><span v-html="featuredStory.content"></span>
+                                            </p>
+                                            <span class="card-link text-black-50">
+                                                {{ featuredStory.date }} | {{ featuredStory.source.name }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -94,8 +104,6 @@
 
             <!-- ==================== OTHER STORIES ==================== -->
             <!-- Stories List -->
-            <h1>Other Stories</h1>
-
             <div class="row">
                 <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
                 <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="story in stories">
@@ -104,7 +112,6 @@
                         <article>
 
                             <!-- Story image -->
-                            <img class="card-img-top rounded-top-4" v-bind:src="story.image">
 
                             <div class="card-body">
 
@@ -115,8 +122,11 @@
 
                                 <!-- Story description -->
                                 <p class="card-text text-black-50">
-                                    <span class="dd-tag">Summary - </n></span>{{ story.description }}
-                                    <span class="dd-tag">Details - </span><span v-html="story.content"></span>
+                                    <span class="fw-semibold">Summary - </n></span>{{ story.description }}
+                                </p>
+                                <img class="card-img-top rounded-4" v-bind:src="story.image">
+                                <p class="card-text text-black-50 mt-4">
+                                    <span class="fw-semibold">Details - </span><span v-html="story.content"></span>
                                 </p>
 
                                 <!-- Story date + source -->
@@ -134,8 +144,8 @@
         <!-- ==================== SITE INFO ==================== -->
 
         <footer>
-            <hr />
-            <div class="text-black-50 d-flex justify-content-lg-between flex-sm-column flex-lg-row">
+            <hr class="mx-auto col-10"/>
+            <div class="mt-4 mx-auto col-10 text-black-50 d-flex justify-content-lg-between flex-sm-column flex-lg-row">
 
                 <div>
                     <p><a class="text-decoration-none text-black-50" href="#">Privacy Policy</a></p>
@@ -155,7 +165,7 @@
                     </p>
                 </div>
 
-                <div class="footer-icon">
+                <div class="d-lg-flex flex-column align-items-end">
                     <p>Connect with the developer:</p>
                     <a class="text-black-50" href="https://github.com/jeffreyw2021"><i class="fa-brands fa-github"></i></a>
                     <a class="text-black-50" href="https://www.linkedin.com/in/ziqianwang2021/"><i class="fa-brands fa-linkedin"></i></a>
