@@ -459,6 +459,7 @@ footer a:hover{
         display: flex;
         justify-content: space-between;
         column-gap: 20px;
+        align-items: flex-start;
     }
 
     img{

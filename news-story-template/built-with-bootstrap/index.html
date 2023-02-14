@@ -25,25 +25,28 @@
 
     <!-- ==================== HEADER ==================== -->
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <i class="fa-solid fa-radio"></i><span>ROD</span>
+        <nav class="navbar navbar-expand-lg col-lg-11 col-md-10 col-sm-9 mx-auto mt-3 bg-dark bg-gradient rounded-pill opacity-75">
+            
+            <div class="container-fluid d-flex justify-content-between">
+                <a class="navbar-brand text-light ms-4" href="#">
+                    <i class="fa-solid fa-radio"></i>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+
+                <button class="navbar-toggler mx-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link link-light opacity-100 active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link link-light opacity-75" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link link-light opacity-75" href="#">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -55,21 +58,21 @@
 
     <!-- ==================== NEWS STORIES ==================== -->
     <div id="news-stories-list-template" v-cloak>
-        <div class="container">
+        <div class="container mt-4">
 
             <!-- ==================== FEATURED STORIES ==================== -->
             <h1>This Moment's Featured</h1>
             <!-- The Featured Story -->
-            <div class="featured-story">
+            <div class="mb-5">
 
                 <a v-bind:href="featuredStory.url" class="text-decoration-none">
 
-                    <div class="card">
-                        <div class="row">
+                    <div class="card border-light rounded-4 Small shadow">
+                        <div class="row d-flex align-items-center">
 
-                            <div class="col-md-8">
+                            <div class="col-lg-6 col-sm-12">
                                 <div class="card-body">
-                                    <h5 class="card-title text-black">{{ featuredStory.title }}</h5>
+                                    <h2 class="card-title text-black">{{ featuredStory.title }}</h2>
                                     <p class="card-text text-black-50">
                                         <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
                                         <span class="dd-tag">Details - </span><span
@@ -81,8 +84,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <img v-bind:src="featuredStory.image" class="img-fluid rounded-start">
+                            <div class="col-lg-6 col-sm-12">
+                                <img v-bind:src="featuredStory.image" class="img-fluid rounded-4">
                             </div>
                         </div>
                     </div>
@@ -95,13 +98,13 @@
 
             <div class="row">
                 <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
-                <div class="col-4" v-for="story in stories">
-                    <div class="card">
+                <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="story in stories">
+                    <div class="card border-light rounded-4 Small shadow">
                     <a v-bind:href="story.url" class="text-decoration-none">
                         <article>
 
                             <!-- Story image -->
-                            <img class="card-img-top" v-bind:src="story.image">
+                            <img class="card-img-top rounded-top-4" v-bind:src="story.image">
 
                             <div class="card-body">
 
@@ -132,30 +135,30 @@
 
         <footer>
             <hr />
-            <div class="footer-content">
+            <div class="text-black-50 d-flex justify-content-lg-between flex-sm-column flex-lg-row">
 
-                <div class="footer-business">
-                    <p><a href="#">Privacy Policy</a></p>
-                    <p><a href="#">Terms and Conditions</a></p>
-                    <p><a href="#">Contact Us</a></p>
+                <div>
+                    <p><a class="text-decoration-none text-black-50" href="#">Privacy Policy</a></p>
+                    <p><a class="text-decoration-none text-black-50" href="#">Terms and Conditions</a></p>
+                    <p><a class="text-decoration-none text-black-50" href="#">Contact Us</a></p>
                 </div>
 
                 <div class="footer-text">
                     <p id="creator">© 2023 -
-                        <a href="https://github.com/jeffreyw2021/layout2023spring/tree/main/news-story-template">News
+                        <a class="text-decoration-none text-black-50" href="https://github.com/jeffreyw2021/layout2023spring/tree/main/news-story-template">News
                             Story Template</a>
-                        by <a href="https://github.com/jeffreyw2021">
+                        by <a class="text-decoration-none text-black-50" href="https://github.com/jeffreyw2021">
                             Ziqian Wang
                         </a>
                     </p>
-                    <p id="citation"><a href="https://gnews.io">Powered by GNews</a>
+                    <p id="citation"><a class="text-decoration-none text-black-50" href="https://gnews.io">Powered by GNews</a>
                     </p>
                 </div>
 
                 <div class="footer-icon">
                     <p>Connect with the developer:</p>
-                    <a href="https://github.com/jeffreyw2021"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ziqianwang2021/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="text-black-50" href="https://github.com/jeffreyw2021"><i class="fa-brands fa-github"></i></a>
+                    <a class="text-black-50" href="https://www.linkedin.com/in/ziqianwang2021/"><i class="fa-brands fa-linkedin"></i></a>
                     <!-- <a href="#"><i class="fa-brands fa-weixin"></i></a> -->
                 </div>
             </div>
