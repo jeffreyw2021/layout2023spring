@@ -57,7 +57,7 @@ header{
 .logo{
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
+    align-items:center;
     margin-left: 8vh;
 }
 .logo i{
@@ -86,7 +86,7 @@ header{
     text-decoration: none;
     display:flex;
     justify-content:space-between;
-    align-items:flex-end;
+    align-items:center;
 }
 .nav-btn{
     color:white;

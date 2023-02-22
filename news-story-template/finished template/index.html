@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Masthead</title>
-    <style>[v-cloak] { display: none; } img {max-width: 100%;}</style>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="all.css">
-    <script src="https://kit.fontawesome.com/c54adec46d.js" crossorigin="anonymous"></script>
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEWSWAVES</title>
+  <style>[v-cloak] {display: none;}img {max-width: 100%;}</style>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/images/favicon/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest/app.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="all.css">
+  <script src="https://kit.fontawesome.com/c54adec46d.js" crossorigin="anonymous"></script>
+</head>
 
-    <!-- ==================== HEADER ==================== -->
-    <header>
-      <a href="#" class="logo"><i class="fa-solid fa-radio"></i><span>NEWS</span></a>
+<body>
 
-      <ul class="navbar">
-          <li class="nav-btn active"><a href="#">Home</a></li>
-          <li class="nav-btn"><a href="#">About</a></li>
-          <li class="nav-btn"><a href="#">Contact</a></li>
-      </ul>
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <a href="#" class="logo">
+      <i class="fa-regular fa-circle-dot"></i>
+      <span>NEWSWAVES</span>
+    </a>
 
-      <div class="clock"><p id="time"></p></div>
-      <div class="burger-menu"><i class="fa-solid fa-bars" id="menu-icon"></i></div>
+    <ul class="navbar">
+      <li class="nav-btn active"><a href="#">General</a></li>
+      <li class="nav-btn"><a href="#">Politics</a></li>
+      <li class="nav-btn"><a href="#">Business</a></li>
+      <li class="nav-btn"><a href="#">Tech</a></li>
+      <li class="nav-btn"><a href="#">Sports</a></li>
+      <li class="nav-btn"><a href="#">Culture</a></li>
+      <li class="clock">
+        <p id="time"></p>
+      </li>
+    </ul>
+
+    <div class="burger-menu"><i class="fa-solid fa-bars" id="menu-icon"></i></div>
   </header>
   <div class="fade-block"></div>
   <div class="nav-block"></div>
@@ -31,150 +44,152 @@
   <!-- ==================== NEWS STORIES ==================== -->
   <div id="news-stories-list-template" v-cloak>
 
-      <!-- ==================== FEATURED STORIES ==================== -->
-      <!-- <h1>This Moment's Featured</h1> -->
-      <br>
-      <!-- The Featured Story -->
-      <div class="featured-story">
+    <!-- ==================== FEATURED STORIES ==================== -->
+    <!-- <h1>This Moment's Featured</h1> -->
+    <br>
+    <!-- The Featured Story -->
+    <div class="featured-story">
 
-          <a v-bind:href="featuredStory.url">
-              <article class="story" id="feat-story">
+      <a v-bind:href="featuredStory.url">
+        <article class="story" id="feat-story">
 
-                  <h2 class="story-title">
-                      {{ featuredStory.title }}
-                  </h2>
+          <h2 class="story-title">
+            {{ featuredStory.title }}
+          </h2>
 
-                  <div class="story-item">
+          <div class="story-item">
 
-                      <!-- Story image -->
-                      <img id="fimg-front" v-bind:src="featuredStory.image">
-                    
-                      <div class="text-content">
-                          <!-- Story description -->
-                          <div>
-                              <p class="desc">
-                                  <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
-                              </p>
-                              <!-- Story content (truncated) -->
-                              <p class="content">
-                                  <span class="dd-tag">Details - </span><span v-html="featuredStory.content"></span>
-                              </p>
-                          </div>
+            <!-- Story image -->
+            <img id="fimg-front" v-bind:src="featuredStory.image">
 
-                          <!-- Story source (linked) -->
-                          <span class="source">
-                              {{ featuredStory.date }} | {{ featuredStory.source.name }}
-                          </span>
-                      </div>
+            <div class="text-content">
+              <!-- Story description -->
+              <div>
+                <p class="desc">
+                  <span class="dd-tag">Summary - </span>{{ featuredStory.description }}
+                </p>
+                <!-- Story content (truncated) -->
+                <p class="content">
+                  <span class="dd-tag">Details - </span><span v-html="featuredStory.content"></span>
+                </p>
+              </div>
 
-                      <img id="fimg-back" v-bind:src="featuredStory.image">
-                  </div>
+              <!-- Story source (linked) -->
+              <span class="source">
+                {{ featuredStory.date }} | {{ featuredStory.source.name }}
+              </span>
+            </div>
 
-              </article>
-          </a>
-      </div>
-      <!-- <pre>The featured story object: {{ featuredStory | json }}</pre> -->
+            <img id="fimg-back" v-bind:src="featuredStory.image">
+          </div>
 
-      <!-- ==================== OTHER STORIES ==================== -->
-      <!-- Stories List -->
-      <!-- <h1>Other Stories</h1> -->
-      <br>
-      <!-- <hr/> -->
+        </article>
+      </a>
+    </div>
+    <!-- <pre>The featured story object: {{ featuredStory | json }}</pre> -->
 
-        <ul class="story-list">
-          <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
-          <li class="story" v-for="story in stories">
-          <a v-bind:href="story.url">
+    <!-- ==================== OTHER STORIES ==================== -->
+    <!-- Stories List -->
+    <!-- <h1>Other Stories</h1> -->
+    <br>
+    <!-- <hr/> -->
+
+    <ul class="story-list">
+      <!-- This 'loop' generates a list item for each story in the 'stories' array. -->
+      <li class="story" v-for="story in stories">
+        <a v-bind:href="story.url">
           <article>
 
-              <!-- Story title (linked) -->
-              <h2 class="story-title">
-                {{ story.title }}
-              </h2>
+            <!-- Story title (linked) -->
+            <h2 class="story-title">
+              {{ story.title }}
+            </h2>
 
-              <!-- Story description -->
-              <p class="desc">
-                <span class="dd-tag">Summary - </n></span>{{ story.description }}
-              </p>
+            <!-- Story description -->
+            <p class="desc">
+              <span class="dd-tag">Summary - </n></span>{{ story.description }}
+            </p>
 
-              <!-- Story image -->
-               <img class="other-img" v-bind:src="story.image">
+            <!-- Story image -->
+            <img class="other-img" v-bind:src="story.image">
 
-              <!-- Story content (truncated) -->
-              <p class="content">
-                <span class="dd-tag">Details - </span><span v-html="story.content"></span>
-              </p>
-                
-              <!-- Story date + source -->
-              <span class="source">
-                {{ story.date }} | {{ story.source.name }}
-              </span>
+            <!-- Story content (truncated) -->
+            <p class="content">
+              <span class="dd-tag">Details - </span><span v-html="story.content"></span>
+            </p>
+
+            <!-- Story date + source -->
+            <span class="source">
+              {{ story.date }} | {{ story.source.name }}
+            </span>
 
           </article>
-          </a>
-          </li>
-          <li class="placeholder"></li>
-          <li id="bottom-pl" class="placeholder"></li>
-        </ul>
-      <!-- <pre>The stories array: {{ stories | json }}</pre> -->
-    </div>
+        </a>
+      </li>
+      <li class="placeholder"></li>
+      <li id="bottom-pl" class="placeholder"></li>
+    </ul>
+    <!-- <pre>The stories array: {{ stories | json }}</pre> -->
+  </div>
 
-    <!-- ==================== SITE INFO ==================== -->
+  <!-- ==================== SITE INFO ==================== -->
 
-    <footer>
-      <hr/>
-      <div class="footer-content">
+  <footer>
+    <hr />
+    <div class="footer-content">
 
-        <div class="footer-business">
-          <p><a href="#">Privacy Policy</a></p>
-          <p><a href="#">Terms and Conditions</a></p>
-          <p><a href="#">Contact Us</a></p>
-        </div>
-
-        <div class="footer-text">
-          <p id="creator">© 2023 - 
-            <a href="https://github.com/jeffreyw2021/layout2023spring/tree/main/news-story-template">News Story Template</a> 
-            by <a href="https://github.com/jeffreyw2021">
-              Ziqian Wang
-            </a>
-          </p>
-          <p id="citation"><a href="https://gnews.io">Powered by GNews</a>
-          </p>
-        </div>
-
-        <div class="footer-icon">
-          <p>Connect with the developer:</p>
-          <a href="https://github.com/jeffreyw2021"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ziqianwang2021/"><i class="fa-brands fa-linkedin"></i></a>
-          <!-- <a href="#"><i class="fa-brands fa-weixin"></i></a> -->
-        </div>
+      <div class="footer-business">
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">Terms and Conditions</a></p>
+        <p><a href="#">Contact Us</a></p>
       </div>
-    </footer>
 
-    <!-- ==================== JAVASCRIPT ==================== -->
+      <div class="footer-text">
+        <p id="creator">© 2023 -
+          <a href="https://github.com/jeffreyw2021/layout2023spring/tree/main/news-story-template">News Story
+            Template</a>
+          by <a href="https://github.com/jeffreyw2021">
+            Ziqian Wang
+          </a>
+        </p>
+        <p id="citation"><a href="https://gnews.io">Powered by GNews</a>
+        </p>
+      </div>
 
-    <!-- These scripts load the Vue library, and the actual story content. -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
+      <div class="footer-icon">
+        <p>Connect with the developer:</p>
+        <a href="https://github.com/jeffreyw2021"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ziqianwang2021/"><i class="fa-brands fa-linkedin"></i></a>
+        <!-- <a href="#"><i class="fa-brands fa-weixin"></i></a> -->
+      </div>
+    </div>
+  </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
+  <!-- ==================== JAVASCRIPT ==================== -->
 
-      // show menu in mobile view
-      let menu = document.querySelector('#menu-icon');
-      let nav = document.querySelector('.navbar');
-      menu.onclick = () => {
-          nav.classList.toggle('open');
-      }
+  <!-- These scripts load the Vue library, and the actual story content. -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://abesiemsen.github.io/layout2023spring-resources/projects/news-story-template/data.js"></script>
 
-      // clock on navbar
-      function updateClock() {
-        let date = new Date();
-        let time = date.toLocaleTimeString();
-        document.getElementById("time").innerText = time;
-      }
-      setInterval(updateClock, 1000);
-    </script>
-    
-  </body>
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // show menu in mobile view
+    let menu = document.querySelector('#menu-icon');
+    let nav = document.querySelector('.navbar');
+    menu.onclick = () => {
+      nav.classList.toggle('open');
+    }
+
+    // clock on navbar
+    function updateClock() {
+      let date = new Date();
+      let time = date.toLocaleTimeString();
+      document.getElementById("time").innerText = time;
+    }
+    setInterval(updateClock, 1000);
+  </script>
+
+</body>
+
 </html>

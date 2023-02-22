@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
 /* ========== GENERAL ========== */
 body {
@@ -57,20 +58,21 @@ header{
 .logo{
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
+    align-items:center;
     margin-left: 8vh;
 }
 .logo i{
     color:white;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     transition: all .2s ease;
 }
 .logo span{
     color:white;
-    font-size: 1.6rem;
-    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-family: 'Fugaz One', cursive;
     font-weight: 600;
     margin-left:8px;
+    margin-top:3px;
     transition: all .2s ease;
 }
 
@@ -86,15 +88,17 @@ header{
     text-decoration: none;
     display:flex;
     justify-content:space-between;
-    align-items:flex-end;
+    align-items:center;
+    margin-right: 5vh;
+    white-space:nowrap;
 }
 .nav-btn{
     color:white;
     font-family: 'Poppins', sans-serif;
-    font-size:1.1rem;
-    font-weight:500;
+    font-size:1rem;
+    font-weight:400;
     padding:5px 3px;
-    margin:0px 30px;
+    margin:0px 20px;
     transition: all .2s ease;
 }
 .nav-btn.active{
@@ -110,7 +114,8 @@ header{
     font-family: 'Poppins', sans-serif;
     font-size:1rem;
     font-weight:300;
-    margin-right:8vh;
+    padding:5px 3px;
+    margin:0px 20px;
     transition: all .2s ease;
 }
 
@@ -353,10 +358,10 @@ footer a:hover{
         margin-left: 5vh;
     }
     .logo i{
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     .logo span{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .clock{
@@ -373,12 +378,15 @@ footer a:hover{
         background: linear-gradient(#f3f0f0 10%, transparent);
     }
 
+    .logo span{
+        margin-top:2px;
+    }
     .navbar{
         position:absolute;
         top:100%;
-        right:-110%;
+        right:-120%;
         width:98%;
-        height:190px;
+        height:390px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -398,7 +406,6 @@ footer a:hover{
         transition: all 0.3s ease;
         color:#333;
     }
-
     .nav-btn:hover{
         color:#48ad26;
         transform:translateY(5px);
@@ -408,8 +415,14 @@ footer a:hover{
     }
 
     .navbar.open{
-        right:1%;
+        display:absolute;
+        margin:25px auto;
+        right:0%;
     }
+    .clock{
+        display: none;
+    }
+
     .footer-content{
         margin: 0;
         flex-direction: column;
