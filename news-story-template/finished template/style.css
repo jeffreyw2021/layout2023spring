@@ -59,7 +59,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-left: 8vh;
+    margin-left: 5vh;
 }
 .logo i{
     color:white;
@@ -125,7 +125,7 @@ header{
 }
 .burger-menu i{
     color:white;
-    font-size: 28px;
+    font-size: 20px;
     margin-right: 10vh;
     transition: all .2s ease;
 }
@@ -356,7 +356,7 @@ footer a:hover{
     }
 
     .logo{
-        margin-left: 5vh;
+        margin-left: 4vh;
     }
     .logo i{
         font-size: 1.4rem;
