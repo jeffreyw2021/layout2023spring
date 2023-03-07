@@ -1,0 +1,55 @@
+<form>
+    <!-- HTTPS -->
+    <div class="mb-3">
+        <label for="basic-url" class="form-label">Your favorite website</label>
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">https://</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="form-text">Example: www.youtube.com</div>
+    </div>
+
+    <!-- SELECT LIST -->
+    <div class="form-group mb-3">
+        <label for="exampleFormControlSelect1">Select your favorite prorgaming language</label>
+        <select class="form-select" id="exampleFormControlSelect1">
+            <option selected="">Select language</option>
+            <option>C</option>
+            <option>C++</option>
+            <option>Python</option>
+            <option>JAVA</option>
+            <option>C#</option>
+            <option>Go</option>
+            <option>JavaScript</option>
+            <option>PHP</option>
+            <option>SQL</option>
+            <option>Swift</option>
+            <option>Ruby</option>
+            <option>Perl</option>
+            <option>Scala</option>
+            <option>Objective-C</option>
+        </select>
+    </div>
+
+    <!-- TEXT AREA -->
+    <div class="form-group mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Describe why you love this langauge?</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <!-- EMAIL, PASSWORD, CHECKBOX -->
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control form-control-sm" id="exampleInputEmail1">
+    </div>
+    <div class="mb-3">
+        <label for="inputPassword1" class="form-label">Password</label>
+        <input type="password" id="inputPassword1" class="form-control form-control-sm" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">Your password must be 8-20 characters long with letters and numbers, and must contain no special character or empty space.</div>
+    </div>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
