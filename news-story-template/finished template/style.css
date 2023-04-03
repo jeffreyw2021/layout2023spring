@@ -463,7 +463,7 @@ footer a:hover{
         flex-wrap: wrap;
         width: 100%;
         gap: 40px 40px;
-      }
+    }
 
     .story-list .story{
         height: auto;
