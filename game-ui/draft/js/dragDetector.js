@@ -19,17 +19,20 @@ function setCursor(cursor) {
 
 function resizeOperationBody(newHeight) {
     // Check if the new height is within the allowed range
-    const minHeight = 60; // Minimum height in pixels
-    const maxHeight = window.innerHeight;
+    const minHeight = 40; // Minimum height in pixels
+    const maxHeight = window.innerHeight * 0.5;
     if (newHeight > maxHeight) {
         // Set the new height to the maximum height
         operationBody.style.height = `${maxHeight}px`;
+        gameBg.style.minHeight = `${maxHeight}px`;
     } else if (newHeight < minHeight) {
         // Set the new height to the minimum height
         operationBody.style.height = `${minHeight}px`;
+        gameBg.style.minHeight = `${minHeight}px`;
     } else {
         // Update the height of the div
         operationBody.style.height = `${newHeight}px`;
+        gameBg.style.minHeight = '50vh';
         // Update the margin of the game bg
         const gameBgHeight = window.innerHeight - newHeight;
         gameBg.style.height = `${gameBgHeight}px`;
@@ -45,6 +48,7 @@ function resizeOperationBody(newHeight) {
         }
     }
 }
+
 
 dragBar.addEventListener('mouseenter', function () {
     setCursor('grab');
