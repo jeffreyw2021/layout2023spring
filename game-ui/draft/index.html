@@ -16,25 +16,28 @@
     <script src="https://kit.fontawesome.com/c54adec46d.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color: #110c3a;">
+<body style="background-color: #130e37;">
     <main>
         <div style="width: 100vw; height: 100vh; overflow-y: hidden;">
             <div id="operation-body" class="w-100 position-absolute d-flex flex-column justify-content-start bottom-0">
                 <div class="w-100 d-flex justify-content-center align-items-center" id="dragbar">
                     <div class="d-flex justify-content-center align-items-center" id="dragbarbtn">
                         <div class="d-flex justify-content-center align-items-center btn-realistic rounded-pill">
-                            <div class="d-flex" style="font-size: 1.8rem; color:white">
+                            <div id="dragbarIcons" class="d-flex" style="font-size: 3rem; color:#ff5ae4">
                                 <i class="fa-solid fa-caret-up" id="upIcon" style="display:none;"></i>
                                 <i class="fa-solid fa-caret-down" id="downIcon" style="display:block;"></i>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="bike-panel" style="opacity:1"></div>
                 <div style="width: 100vw; height: 100vh;" class="d-flex">
-                    <div class="h-100" style="width:calc(100vw/3); background:rgb(215, 215, 215)"></div>
-                    <div class="h-100" style="width:calc(100vw/3); background:gray"></div>
-                    <div class="h-100" style="width:calc(100vw/3); background:rgb(88, 88, 88)"></div>
-                    <div class="h-100" style="width:calc(100vw/3); background:rgb(55, 55, 55)"></div>
+                    <div class="h-100" style="width:calc((100vw - (50vh * 7/4))/2); background:#040408">
+                    </div>
+                    <div class="h-100" id="panel-bottom">
+                    </div>
+                    <div class="h-100" style="width:calc((100vw - (50vh * 7/4))/2); background:#040408;">
+                    </div>
                 </div>
             </div>
             <div id="game-body">
