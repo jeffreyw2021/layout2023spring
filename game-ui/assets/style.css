@@ -145,5 +145,5 @@
     height: 100%;
     background: url('./items/background/tokyo-bg-short.png') left bottom;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
 }
