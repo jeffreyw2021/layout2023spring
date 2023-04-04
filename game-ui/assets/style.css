@@ -97,34 +97,83 @@
         text-shadow: 0 0 10px #ff5ae4;
     }
 }
-
-#bike-panel {
+#panel-container{
+    position: absolute;
+    bottom:0;
     height: calc(50vh - 40px);
     width: 100vw;
+    transition: bottom 0.5s ease;
+    animation: panelExpand 2s ease-in-out infinite;
+}
+#display-container{
+    --panel-color: #110830;
     position: absolute;
+    margin-bottom:0;
+    height: calc(50vh - 40px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    transition: bottom 0.5s ease;
+}
+#panel-display{
+    margin-top: 46px;
+    padding: 0 10px;
+    height:135px;
+    width: 680px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    animation: panelMarginExpand 2s ease-in-out infinite;
+}
+.circle-panel{
+    width: 130px;
+    height: 98px;
+}
+.circles{
+    background: var(--panel-color);
+    width: 98px;
+    height: 98px;
+    margin-left: 14px;
+    border-radius: 50%;
+}
+.square-panel{
+    width: 300px;
+    height: 130px;
+    display:flex;
+    justify-content: center;
+    align-items: start;
+}
+.squares{
+    background: var(--panel-color);
+    width: 300px;
+    height: 120px;
+}
+
+#bike-panel {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
     z-index: 100;
     bottom: 0;
-    background: url('./items/panels/bike-panel-dark.png') no-repeat center bottom;
-    background-size: auto calc(50vh - 40px);
+    background: url('./items/panels/bike-panel-frame.png') no-repeat center bottom;
+    background-size: auto 100%;
     filter: contrast(1);
     transition: filter 0.5s ease;
     animation: panelGlow 5s ease-in-out infinite;
 }
-
 #panel-bottom {
     width: calc(50vh * 7/4);
     background: url('./items/panels/bike-panel-bg.png') no-repeat center top;
-    background-size: auto calc(50vh - 30px);
+    background-size: auto calc(50vh - 35px);
 }
-
-@keyframes panelGlow {
+/* @keyframes panelGlow {
     0% {
         filter: contrast(1) brightness(1);
         background-size: auto calc(50vh - 40px);
     }
 
     50% {
-        filter: contrast(1.5) brightness(1.5);
+        filter: contrast(1.5) brightness(1.8);
         background-size: auto calc(50vh - 30px);
     }
 
@@ -132,8 +181,52 @@
         filter: contrast(1) brightness(1);
         background-size: auto calc(50vh - 40px);
     }
-}
+} */
+@keyframes panelGlow {
+    0% {
+        filter: contrast(1) brightness(1);
+    }
 
+    50% {
+        filter: contrast(1.5) brightness(1.5);
+    }
+
+    100% {
+        filter: contrast(1) brightness(1);
+    }
+}
+@keyframes panelExpand{
+    0% {
+        height: calc(50vh - 40px);
+    }
+
+    50% {
+        height: calc(50vh - 30px);
+    }
+
+    100% {
+        height: calc(50vh - 40px);
+    }
+}
+@keyframes panelMarginExpand{
+    0% {
+        margin-top: 46px;
+        height:133px;
+        width: 680px;
+    }
+
+    50% {
+        margin-top: 38px;
+        height:136px;
+        width: 698px;
+    }
+
+    100% {
+        margin-top: 46px;
+        height:133px;
+        width: 680px;
+    }
+}
 
 /* ========== GAME BODY ========== */
 #game-body {
@@ -158,9 +251,13 @@
     background-size: cover;
     background-repeat: repeat-x;
 }
-
+.player-container{
+    transform-origin: bottom left;
+}
 .player {
     --bike-width: 121px;
+    min-height: 100px;
+    width: 95%;
 }
 .player .frame {
     position: absolute;
@@ -179,7 +276,7 @@
 }
 .player-shadow {
     z-index: 10;
-    --shadow-left: 70px;
+    --shadow-left: -30px;
     position: absolute;
     bottom: 3px;
     left: var(--shadow-left);
@@ -196,11 +293,6 @@
     width: 8%;
     margin-bottom: 8px;
     animation: redBackForth 5s infinite linear;
-}
-#red .player {
-    min-height: 100px;
-    width: 100%;
-    margin-left: 100px;
 }
 @keyframes redBackForth {
     0% {
@@ -235,11 +327,6 @@
     margin-bottom: 30px;
     animation: purpleBackForth 5s infinite linear;
 }
-#purple .player {
-    min-height: 100px;
-    width: 95%;
-    margin-left: 100px;
-}
 @keyframes purpleBackForth {
     0% {
         margin-left: var(--purple-left);
@@ -269,11 +356,6 @@
     margin-bottom: 40px;
     animation: whiteBackForth 5s infinite linear;
 }
-#white .player {
-    min-height: 100px;
-    width: 95%;
-    margin-left: 100px;
-}
 @keyframes whiteBackForth {
     0% {
         margin-left: var(--white-left);
@@ -297,8 +379,6 @@
 }
 
 
-
-
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -315,11 +395,11 @@
     }
 
     50% {
-        transform: rotateZ(-3deg);
+        transform: rotateZ(-5deg);
     }
 
     70% {
-        transform: rotateZ(-3deg);
+        transform: rotateZ(-5deg);
     }
 
     80% {

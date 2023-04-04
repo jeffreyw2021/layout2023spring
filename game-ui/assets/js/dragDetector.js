@@ -5,7 +5,7 @@ const gameBg = document.getElementById('game-bg');
 let opDefaultHeight = 50;
 const upIcon = document.getElementById('upIcon');
 const downIcon = document.getElementById('downIcon');
-const bikePanel = document.getElementById('bike-panel');
+const bikePanel = document.getElementById('panel-container');
 var heightTracker = operationBody.clientHeight;
 
 // Define an array of folders containing the background assets
@@ -14,40 +14,6 @@ const folders = [''];
 const folder = folders[Math.floor(Math.random() * folders.length)];
 // Assign the background image to the game-bg div
 gameBg.style.backgroundImage = `url('./assets/background/${folder}/bg.png')`;
-
-// function resizeOperationBody(newHeight) {
-//     // Check if the new height is within the allowed range
-//     const minHeight = 40; // Minimum height in pixels
-//     const maxHeight = window.innerHeight * 0.5 + 5;
-//     if (newHeight > maxHeight) {
-//         // Set the new height to the maximum height
-//         operationBody.style.height = `${maxHeight}px`;
-//         gameBg.style.minHeight = `${maxHeight - 6}px`;
-//     } else if (newHeight < minHeight) {
-//         // Set the new height to the minimum height
-//         operationBody.style.height = `${minHeight}px`;
-//         gameBg.style.minHeight = `${minHeight}px`;
-//     } else {
-//         // Update the height of the div
-//         operationBody.style.height = `${newHeight}px`;
-//         gameBg.style.minHeight = '50vh';
-//         // Update the margin of the game bg
-//         const gameBgHeight = window.innerHeight - newHeight;
-//         gameBg.style.height = `${gameBgHeight}px`;
-
-//         // Show/hide the up and down icons based on the height of the operationBody
-//         if (newHeight >= 50) {
-//             upIcon.style.display = 'none';
-//             downIcon.style.display = 'block';
-//         } else {
-//             upIcon.style.display = 'block';
-//             downIcon.style.display = 'none';
-//         }
-
-//         // Update heightTracker with the height of operationBody
-//         heightTracker = operationBody.offsetHeight;
-//     }
-// }
 
 dragBarBtn.addEventListener('click', function (event) {
     if (heightTracker > 50) {
@@ -65,7 +31,7 @@ dragBarBtn.addEventListener('click', function (event) {
 
         // Update the margin-bottom of bikePanel
         bikePanel.style.transition = 'all 0.3s ease';
-        bikePanel.style.marginBottom = '-55vh';
+        bikePanel.style.bottom = '-55vh';
     }
     else {
         // Set the height to 50vh with the transition effect
@@ -79,7 +45,7 @@ dragBarBtn.addEventListener('click', function (event) {
 
         // Update the margin-bottom of bikePanel
         bikePanel.style.transition = 'all 0.3s ease';
-        bikePanel.style.marginBottom = '0px';
+        bikePanel.style.bottom = '0';
     }
 });
 

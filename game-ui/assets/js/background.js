@@ -1,7 +1,7 @@
 const layerTop = document.querySelector('.layer-top');
 let marginLeft = 0;
 const bgWidth = layerTop.offsetWidth;
-let speed = 5;
+let speed = 7;
 let acceleration = 0.0001;
 let bikeSpeed = 5.98; // meters per second
 
