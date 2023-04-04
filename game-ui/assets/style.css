@@ -106,7 +106,7 @@
     animation: panelExpand 2s ease-in-out infinite;
 }
 #display-container{
-    --panel-color: #fff;
+    --panel-color: #110830;
     /* --panel-color: #110830; */
     position: absolute;
     margin-bottom:0;
