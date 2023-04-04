@@ -104,7 +104,7 @@
     position: absolute;
     z-index: 100;
     bottom: 0;
-    background: url('./items/panels/bike-panel-red.png') no-repeat center bottom;
+    background: url('./items/panels/bike-panel-only.png') no-repeat center bottom;
     background-size: auto calc(50vh - 40px);
     filter: contrast(1);
     transition: filter 0.5s ease;
@@ -159,19 +159,22 @@
     background-repeat: repeat-x;
 }
 
-.player{
+.player {
     --bike-width: 10vw;
 }
+
 .player .frame {
     position: absolute;
     z-index: 1;
     width: var(--bike-width);
 }
+
 .player .wheels {
     margin-top: 55px;
     position: absolute;
     width: var(--bike-width);
 }
+
 .player .back,
 .player .front {
     width: 30%;
@@ -185,7 +188,7 @@
     margin-bottom: 10px;
     animation: redBackForth 5s infinite linear;
 }
-#red .player{
+#red .player {
     min-height: 100px;
     width: 100%;
     margin-left: 100px;
@@ -261,7 +264,7 @@
     margin-bottom: 40px;
     animation: whiteBackForth 5s infinite linear;
 }
-#white .player{
+#white .player {
     min-height: 100px;
     width: 95%;
     margin-left: 100px;
@@ -322,6 +325,88 @@
     }
 }
 
+#purple {
+    --purple-left: 300px;
+    position: absolute;
+    width: 8%;
+    margin-bottom: 40px;
+    animation: purpleBackForth 5s infinite linear;
+}
+#purple .player {
+    min-height: 100px;
+    width: 95%;
+    margin-left: 100px;
+    background: url('./items/player/purple/purple-frame.png') left bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#purple .player .back {
+    background: url('./items/player/purple/purple-back.png') center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#purple .player .front {
+    background: url('./items/player/purple/purple-front.png') center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#purple .player-shadow {
+    --purple-shadow-left: 140%;
+    position: absolute;
+    bottom: 0px;
+    left: var(--shadow-left);
+    transform: translateX(-50%);
+    width: 140%;
+    height: 10px;
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: purpleShadowBackForth 5s infinite linear;
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+@keyframes purpleShadowBackForth {
+    0% {
+        left: var(--purple-shadow-left);
+    }
+
+    25% {
+        left: calc(var(--purple-shadow-left) * 0.8);
+    }
+
+    50% {
+        left: var(--purple-shadow-left);
+    }
+
+    75% {
+        left: calc(var(--purple-shadow-left) * 2);
+    }
+
+    100% {
+        left: var(--purple-shadow-left);
+    }
+}
+@keyframes purpleBackForth {
+    0% {
+        margin-left: var(--purple-left);
+    }
+
+    25% {
+        margin-left: calc(var(--purple-left) * 0.8);
+    }
+
+    50% {
+        margin-left: var(--purple-left);
+    }
+
+    75% {
+        margin-left: calc(var(--purple-left) * 2);
+    }
+
+    100% {
+        margin-left: var(--purple-left);
+    }
+}
+
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -331,6 +416,7 @@
         transform: rotate(360deg);
     }
 }
+
 @keyframes wobble {
     0% {
         transform: rotateZ(0deg);
