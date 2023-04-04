@@ -98,7 +98,7 @@
 }
 
 #bike-panel {
-    height: calc(100% - 40px);
+    height: calc(50vh - 40px);
     width: 100vw;
     position: absolute;
     z-index: 100;
@@ -116,23 +116,21 @@
 }
 @keyframes panelGlow {
     0% {
-        filter:contrast(1);
-        filter:brightness(1);
+        filter: contrast(1) brightness(1);
         background-size: auto calc(50vh - 40px);
     }
 
     50% {
-        filter:contrast(1.7);
-        filter:brightness(1.7);
+        filter: contrast(1.7) brightness(1.7);
         background-size: auto calc(50vh - 30px);
     }
 
     100% {
-        filter:contrast(1);
-        filter:brightness(1);
+        filter: contrast(1) brightness(1);
         background-size: auto calc(50vh - 40px);
     }
 }
+
 
 /* ========== GAME BODY ========== */
 #game-body {
