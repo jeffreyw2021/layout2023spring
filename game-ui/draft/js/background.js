@@ -10,6 +10,10 @@ function moveBackground() {
   layerTop.style.backgroundPosition = `${marginLeft}px bottom`;
   speed += acceleration;
   bikeSpeed = speed * 5.98 / 60;
+  
+  if (marginLeft <= -bgWidth) {
+    marginLeft = 0;
+  }
 }
 
 setInterval(moveBackground, 5);

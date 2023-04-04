@@ -153,7 +153,7 @@
     max-height: calc(100vh - 40px) !important;
     width: auto;
     height: 100%;
-    background: url('/game-ui/assets/background/tokyo-bg.png') left bottom;
+    background: url('/game-ui/assets/background/tokyo-bg-short.png') left bottom;
     background-size: cover;
     background-repeat: repeat-x;
 }
