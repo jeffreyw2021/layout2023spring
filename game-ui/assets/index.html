@@ -43,8 +43,27 @@
             </div>
             <div id="game-body">
                 <div id="game-bg">
-                    <div class="layer-top d-flex flex-column justify-content-end">
-                        <!-- <hr style="opacity: 0.8; color: #a44693; width:100vw; height: 0.5%; position:absolute; margin-bottom:0.2%;"> -->
+                    <div class="layer-top d-flex justify-content-start align-items-end">
+                        <div class="player-container" style="z-index:3;" id="red">
+                            <div class="player">
+                                <img src="./items/player/red/red-frame.png" alt="frame" class="frame">
+                                <div class="wheels d-flex justify-content-between">
+                                    <img src="./items/player/red/red-back.png" alt="backWheel" class="back">
+                                    <img src="./items/player/red/red-front.png" alt="backWheel" class="front">
+                                </div>
+                            </div>
+                            <div class="player-shadow"></div>
+                        </div>
+                        <div class="player-container" style="z-index:1;" id="white">
+                            <div class="player" style="animation-delay: 0.5s;animation: whiteBackForth 5s infinite linear;">
+                                <img src="./items/player/white/white-frame.png" alt="frame" class="frame">
+                                <div class="wheels d-flex justify-content-between">
+                                    <img src="./items/player/white/white-back.png" alt="backWheel" class="back">
+                                    <img src="./items/player/white/white-front.png" alt="backWheel" class="front">
+                                </div>
+                            </div>
+                            <div class="player-shadow" style="animation-delay: 0.5s; animation: whiteShadowBackForth 5s infinite linear;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -55,7 +74,7 @@
 <script src="./js/dragDetector.js"></script>
 <script src="./js/background.js"></script>
 <script>
-    window.addEventListener("load", function() {
+    window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
         loader.style.display = "none";
     });
