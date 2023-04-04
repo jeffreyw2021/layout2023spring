@@ -1,0 +1,125 @@
+/* ========== OPERATION BODY ========== */
+#operation-body {
+    z-index: 100;
+    height: calc(50vh + 5px);
+    resize: vertical;
+    overflow-y: hidden;
+    transition: transform 0.3s ease;
+}
+
+#dragbar {
+    display: flex;
+    min-height: 40px;
+    overflow: hidden;
+    background: #0c0a20;
+}
+
+#dragbarbtn {
+    height: 100%;
+}
+
+.btn-realistic {
+    font-size: 1.2rem;
+    width: 100px;
+    height: 38px;
+    background-color: #0c0a20;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.btn-realistic:hover {
+    background-color: #20176a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-realistic:active {
+    background-color: #110c3a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.15);
+    transform: translateY(1px);
+}
+
+#dragbarIcons i {
+    animation: glowing 6s ease-in-out infinite;
+}
+
+@keyframes glowing {
+    0% {
+        color: #ff5ae4;
+        text-shadow: 0 0 10px #ff5ae4;
+    }
+
+    50% {
+        color: #ff99ff;
+        text-shadow: 0 0 20px #ff99ff;
+    }
+
+    100% {
+        color: #ff5ae4;
+        text-shadow: 0 0 10px #ff5ae4;
+    }
+}
+
+#bike-panel {
+    height: calc(100% - 40px);
+    width: 100vw;
+    position: absolute;
+    z-index: 100;
+    bottom:0;
+    background: url('/game-ui/assets/panels/bike-panel-only.png') no-repeat center bottom;
+    background-size: auto calc(50vh - 40px);
+    filter: contrast(1);
+    transition: filter 0.5s ease;
+    animation: panelGlow 5s ease-in-out infinite;
+}
+#panel-bottom{
+    width: calc(50vh * 7/4); 
+    background:url('/game-ui/assets/panels/bike-panel-bg.png') no-repeat center top;
+    background-size: auto calc(50vh - 30px);
+}
+@keyframes panelGlow {
+    0% {
+        filter:contrast(1);
+        filter:brightness(1);
+        background-size: auto calc(50vh - 40px);
+    }
+
+    50% {
+        filter:contrast(1.7);
+        filter:brightness(1.7);
+        background-size: auto calc(50vh - 30px);
+    }
+
+    100% {
+        filter:contrast(1);
+        filter:brightness(1);
+        background-size: auto calc(50vh - 40px);
+    }
+}
+
+/* ========== GAME BODY ========== */
+#game-body {
+    max-height: calc(100vh - 40px) !important;
+    width: 100vw;
+    overflow-y: hidden !important;
+}
+
+#game-bg {
+    max-height: calc(100vh - 40px) !important;
+    width: 100vw;
+    height: calc(50vh - 6px);
+    margin-top: 0;
+    overflow-y: hidden !important;
+}
+
+.layer-top {
+    max-height: calc(100vh - 40px) !important;
+    width: auto;
+    height: 100%;
+    background: url('/game-ui/assets/background/tokyo-bg.png') left bottom;
+    background-size: cover;
+    background-repeat: repeat-x;
+}
