@@ -104,7 +104,7 @@
     position: absolute;
     z-index: 100;
     bottom: 0;
-    background: url('./items/panels/bike-panel-only.png') no-repeat center bottom;
+    background: url('./items/panels/bike-panel-dark.png') no-repeat center bottom;
     background-size: auto calc(50vh - 40px);
     filter: contrast(1);
     transition: filter 0.5s ease;
@@ -125,7 +125,7 @@
 
     50% {
         filter: contrast(1.5) brightness(1.5);
-        background-size: auto calc(50vh - 25px);
+        background-size: auto calc(50vh - 30px);
     }
 
     100% {
@@ -160,76 +160,47 @@
 }
 
 .player {
-    --bike-width: 10vw;
+    --bike-width: 121px;
 }
-
 .player .frame {
     position: absolute;
     z-index: 1;
     width: var(--bike-width);
 }
-
 .player .wheels {
     margin-top: 55px;
     position: absolute;
     width: var(--bike-width);
 }
-
 .player .back,
 .player .front {
     width: 30%;
     animation: spin 0.05s infinite linear;
+}
+.player-shadow {
+    z-index: 10;
+    --shadow-left: 70px;
+    position: absolute;
+    bottom: 3px;
+    left: var(--shadow-left);
+    width: 160px;
+    height: 12px;
+    border-radius: 50%;
+    filter: blur(3px);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 #red {
     --red-left: 200px;
     position: absolute;
     width: 8%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     animation: redBackForth 5s infinite linear;
 }
 #red .player {
     min-height: 100px;
     width: 100%;
     margin-left: 100px;
-}
-#red .player-shadow {
-    --red-shadow-left: 110%;
-    position: absolute;
-    bottom: 0px;
-    left: var(--red-shadow-left);
-    transform: translateX(-50%);
-    width: 140%;
-    height: 10px;
-    border-radius: 50%;
-    filter: blur(3px);
-    animation: redShadowBackForth 5s infinite linear;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-@keyframes redShadowBackForth {
-    0% {
-        left: var(--red-shadow-left);
-    }
-
-    20% {
-        left: calc(var(--red-shadow-left) * 0.9);
-    }
-
-    40% {
-        left: var(--red-shadow-left);
-    }
-
-    60% {
-        left: calc(var(--red-shadow-left) * 1.5);
-    }
-
-    80% {
-        left: var(--red-shadow-left);
-    }
-
-    100% {
-        left: var(--red-shadow-left);
-    }
 }
 @keyframes redBackForth {
     0% {
@@ -257,6 +228,40 @@
     }
 }
 
+#purple {
+    --purple-left: 300px;
+    position: absolute;
+    width: 24%;
+    margin-bottom: 30px;
+    animation: purpleBackForth 5s infinite linear;
+}
+#purple .player {
+    min-height: 100px;
+    width: 95%;
+    margin-left: 100px;
+}
+@keyframes purpleBackForth {
+    0% {
+        margin-left: var(--purple-left);
+    }
+
+    25% {
+        margin-left: calc(var(--purple-left) * 0.8);
+    }
+
+    50% {
+        margin-left: var(--purple-left);
+    }
+
+    75% {
+        margin-left: calc(var(--purple-left) * 2);
+    }
+
+    100% {
+        margin-left: var(--purple-left);
+    }
+}
+
 #white {
     --white-left: 100px;
     position: absolute;
@@ -268,40 +273,6 @@
     min-height: 100px;
     width: 95%;
     margin-left: 100px;
-}
-#white .player-shadow {
-    --white-shadow-left: 140%;
-    position: absolute;
-    bottom: 0px;
-    left: var(--shadow-left);
-    transform: translateX(-50%);
-    width: 140%;
-    height: 10px;
-    border-radius: 50%;
-    filter: blur(3px);
-    animation: whiteShadowBackForth 5s infinite linear;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-@keyframes whiteShadowBackForth {
-    0% {
-        left: var(--white-shadow-left);
-    }
-
-    25% {
-        left: calc(var(--white-shadow-left) * 0.8);
-    }
-
-    50% {
-        left: var(--white-shadow-left);
-    }
-
-    75% {
-        left: calc(var(--white-shadow-left) * 2);
-    }
-
-    100% {
-        left: var(--white-shadow-left);
-    }
 }
 @keyframes whiteBackForth {
     0% {
@@ -325,86 +296,7 @@
     }
 }
 
-#purple {
-    --purple-left: 300px;
-    position: absolute;
-    width: 8%;
-    margin-bottom: 40px;
-    animation: purpleBackForth 5s infinite linear;
-}
-#purple .player {
-    min-height: 100px;
-    width: 95%;
-    margin-left: 100px;
-    background: url('./items/player/purple/purple-frame.png') left bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#purple .player .back {
-    background: url('./items/player/purple/purple-back.png') center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#purple .player .front {
-    background: url('./items/player/purple/purple-front.png') center center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-#purple .player-shadow {
-    --purple-shadow-left: 140%;
-    position: absolute;
-    bottom: 0px;
-    left: var(--shadow-left);
-    transform: translateX(-50%);
-    width: 140%;
-    height: 10px;
-    border-radius: 50%;
-    filter: blur(3px);
-    animation: purpleShadowBackForth 5s infinite linear;
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-@keyframes purpleShadowBackForth {
-    0% {
-        left: var(--purple-shadow-left);
-    }
 
-    25% {
-        left: calc(var(--purple-shadow-left) * 0.8);
-    }
-
-    50% {
-        left: var(--purple-shadow-left);
-    }
-
-    75% {
-        left: calc(var(--purple-shadow-left) * 2);
-    }
-
-    100% {
-        left: var(--purple-shadow-left);
-    }
-}
-@keyframes purpleBackForth {
-    0% {
-        margin-left: var(--purple-left);
-    }
-
-    25% {
-        margin-left: calc(var(--purple-left) * 0.8);
-    }
-
-    50% {
-        margin-left: var(--purple-left);
-    }
-
-    75% {
-        margin-left: calc(var(--purple-left) * 2);
-    }
-
-    100% {
-        margin-left: var(--purple-left);
-    }
-}
 
 
 @keyframes spin {
