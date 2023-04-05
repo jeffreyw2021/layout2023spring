@@ -133,7 +133,6 @@ font-family: 'Rubik Pixels', cursive;
     pointer-events: none;
 }
 #panel-image #data-display{
-    opacity: 0.01;
     width: 70%;
     height:25%;
     margin-top: -14.2%;
@@ -144,10 +143,17 @@ font-family: 'Rubik Pixels', cursive;
     animation: dataPanelExpand 5s ease-in-out infinite;
 }
 #panel-image #data-display .circles{
-    background: white;
     height: 75%;
     aspect-ratio: 1/1;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.needle{
+    width: 60%;
+    aspect-ratio: 1/1;
+    transform: rotate(-45deg);
 }
 #panel-image #data-display .squares{
     height: 100%;
@@ -157,7 +163,6 @@ font-family: 'Rubik Pixels', cursive;
     justify-content: flex-start;
 }
 #panel-image #data-display #center-screen{
-    background: white;
     height: 91%;
     width: 100%;
 }
