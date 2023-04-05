@@ -92,6 +92,17 @@
             </div>
 
             <div id="game-body">
+
+                <button id="music-button">
+                    <i class="fa-solid fa-play">
+                        <span style="margin-left:5px;">PLAY MUSIC</span>
+                    </i>
+                    <i class="fa-solid fa-pause" style="display:none;">
+                        <span style="margin-left:5px;">PAUSE MUSIC</span>
+                    </i>
+                </button>
+                <audio id="music-player" preload="none"></audio>
+
                 <div id="game-bg">
                     <div class="layer-top d-flex justify-content-start align-items-end">
                         <!-- red -->
@@ -136,6 +147,7 @@
 
 <script src="./js/dragDetector.js"></script>
 <script src="./js/background.js"></script>
+<script src="./js/music.js"></script>
 <script>
     window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
