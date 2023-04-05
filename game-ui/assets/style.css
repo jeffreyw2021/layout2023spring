@@ -258,6 +258,9 @@ ul {
 ul::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
 }
+li:hover{
+    filter:brightness(1.5);
+}
 
 /* ========== GAME BODY ========== */
 #game-body {
