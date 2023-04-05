@@ -226,8 +226,8 @@ font-family: 'Rubik Pixels', cursive;
     list-style: none;
 }
 #control-left ul li{
-    background-color: gray;
-    border-radius: 20px;
+    background-color: #363636;
+    border-radius: 10px;
 }
 
 #panel-control #controls #control-center{
@@ -247,8 +247,8 @@ font-family: 'Rubik Pixels', cursive;
     list-style: none;
 }
 #control-right ul li{
-    background-color: gray;
-    border-radius: 20px;
+    background-color: #363636;
+    border-radius: 10px;
 }
 
 ul {
