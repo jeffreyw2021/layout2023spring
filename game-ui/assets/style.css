@@ -129,12 +129,11 @@ font-family: 'Rubik Pixels', cursive;
     display:flex;
     justify-content: center;
     align-items: center;
-    animation: panelGlow 5s ease-in-out infinite;
-    animation: panelExpand 5s ease-in-out infinite;
+    animation: panelGlow 5s ease-in-out infinite, panelExpand 5s ease-in-out infinite;
     pointer-events: none;
 }
 #panel-image #data-display{
-    opacity: 0.1;
+    opacity: 0.01;
     width: 70%;
     height:25%;
     margin-top: -14.2%;
