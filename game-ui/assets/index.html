@@ -16,11 +16,12 @@
     <script src="https://kit.fontawesome.com/c54adec46d.js" crossorigin="anonymous"></script>
 </head>
 
-<body style="background-color: #130e37;">
+<body style="background-color: #020204;">
     <div id="loader" class="loader"></div>
     <main>
         <div style="width: 100vw; height: 100vh; overflow-y: hidden;">
             <div id="operation-body" class="w-100 position-absolute d-flex flex-column justify-content-start bottom-0">
+                <!-- top bar -->
                 <div class="w-100 d-flex justify-content-center align-items-center" id="dragbar">
                     <div class="d-flex justify-content-center align-items-center" id="dragbarbtn">
                         <div class="d-flex justify-content-center align-items-center btn-realistic rounded-pill">
@@ -31,31 +32,48 @@
                         </div>
                     </div>
                 </div>
-                <div id="panel-container">
-                    <div id="bike-panel"></div>
-                    <div id="display-container">
-                        <div id="panel-display">
-                            <div class="circle-panel">
-                                <div class="circles"></div>
+
+                <div id="control-body">
+                    <!-- bike panel control -->
+                    <div class="d-flex justify-content-center" id="panel-control">
+                        <div id="panel-image"></div>
+                        <div id="controls">
+                            <div id="control-left">
+                                <h4 class="w-100 ps-4 pe-4 pt-4 pb-0" style="color: white;">BOOSTERS</h4>
+                                <ul class="w-100 ps-4 pe-4 pt-1 pb-0" style="overflow: scroll !important;">
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25 mb-2"></li>
+                                    <li class="w-100 h-25" style="margin-bottom: 70px;"></li>
+                                </ul>
                             </div>
-                            <div class="square-panel">
-                                <div class="squares"></div>
-                            </div>
-                            <div class="circle-panel">
-                                <div class="circles"></div>
+                            <div id="control-center"></div>
+                            <div id="control-right">
+                                <h4 class="w-100 ps-4 pe-4 pt-4 pb-0 d-flex justify-content-end" style="color: white;">BOOSTERS</h4>
+                                <ul class="w-100 ps-4 pe-4 pt-1 pb-0" style="overflow: scroll !important;">
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50 mb-2"></li>
+                                    <li class="w-100 h-50" style="margin-bottom: 70px;"></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="width: 100vw; height: 100vh;" class="d-flex">
-                    <div class="h-100" style="width:calc((100vw - (50vh * 7/4))/2); background:#040408">
-                    </div>
-                    <div class="h-100" id="panel-bottom">
-                    </div>
-                    <div class="h-100" style="width:calc((100vw - (50vh * 7/4))/2); background:#040408;">
-                    </div>
-                </div>
             </div>
+
             <div id="game-body">
                 <div id="game-bg">
                     <div class="layer-top d-flex justify-content-start align-items-end">
