@@ -32,6 +32,10 @@ function playRandomSong() {
     currentSong.src = `./items/music/${selectedSong}`;
   }
 
+  currentSong.addEventListener("ended", function() {
+    playRandomSong();
+  });
+
   currentSong.play();
 }
 
@@ -40,3 +44,4 @@ function pauseSong() {
     currentSong.pause();
   }
 }
+

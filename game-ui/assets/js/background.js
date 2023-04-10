@@ -6,11 +6,13 @@ let acceleration = 0.0001;
 let bikeSpeed = 5.98; // meters per second
 const needles = document.querySelectorAll('.needle');
 
+setInterval(moveBackground, 5);x
+
 function updateNeedleRotation() {
   const minRotation = [120, -120]; // First element for second needle, second element for first needle
   const maxRotation = [-120, 120]; // First element for first needle, second element for second needle
   const minSpeed = 7;
-  const maxSpeed = 20; // Updated to reflect the maximum speed value
+  const maxSpeed = 10; // Updated to reflect the maximum speed value
   const rotationRange = [-240, 240]; // 240 for first needle, -240 for second needle
 
   // Limit the speed value to the maximum speed.
@@ -26,7 +28,7 @@ function updateNeedleRotation() {
 }
 
 function moveBackground() {
-  if (speed <= 20) {
+  if (speed <= 10) {
     marginLeft -= speed;
     layerTop.style.backgroundPosition = `${marginLeft}px bottom`;
     speed += acceleration;
@@ -51,5 +53,3 @@ function moveBackground() {
     bikeSpeed = speed * 5.98 / 60;
   }
 }
-
-setInterval(moveBackground, 5);

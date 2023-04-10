@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>game draft</title>
+    <title>game ui semi-finish</title>
     <!-- style -->
     <link rel="stylesheet" href="style.css">
     <!-- bootstrap -->
@@ -19,8 +19,10 @@
 <body style="background-color: #020204;">
     <div id="loader" class="loader"></div>
     <main>
-        
+
+        <!-- ========== OPERATION BODY ========== -->
         <div style="width: 100vw; height: 100vh; overflow-y: hidden;">
+
             <div id="operation-body" class="w-100 position-absolute d-flex flex-column justify-content-start bottom-0">
                 <!-- top bar -->
                 <div class="w-100 d-flex justify-content-center align-items-center" id="dragbar">
@@ -37,22 +39,88 @@
                 <div id="control-body">
                     <!-- bike panel control -->
                     <div class="d-flex justify-content-center" id="panel-control">
+                        <div class="label-container">
+                            <div class="d-flex" style="width:104%; margin-top: -50px;">
+                                <div class="circle-container" id="fuel-container">
+                                    <div id="fuel-in">
+                                        <svg x="0px" y="0px" width="200" height="200" viewBox="0 0 200 200">
+                                            <defs>
+                                                <path id="curve"
+                                                    d="M40,180c0-60.751,49.248-110,110-110c60.751,0,110,49.249,110,110" />
+                                            </defs>
+                                            <text fill="white" class="curved-text"
+                                                style="font-size: 1.2rem; font-family: 'Press Start 2P', cursive;">
+                                                <textPath xlink:href="#curve" text-anchor="middle" startOffset="50%"
+                                                    id="fuel">FUEL</textPath>
+                                            </text>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="circle-container" id="speed-container">
+                                    <div id="speed-in">
+                                        <svg x="0px" y="0px" width="200" height="200" viewBox="0 0 200 200">
+                                            <defs>
+                                                <path id="curve"
+                                                    d="M40,180c0-60.751,49.248-110,110-110c60.751,0,110,49.249,110,110" />
+                                            </defs>
+                                            <text fill="white" class="curved-text"
+                                                style="font-size: 1.2rem; font-family: 'Press Start 2P', cursive;">
+                                                <textPath xlink:href="#curve" text-anchor="middle" startOffset="50%"
+                                                    id="fuel">SPEED</textPath>
+                                            </text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div id="panel-image">
                             <div id="data-display">
                                 <div class="circles">
                                     <img src="./items/panels/needle.png" alt="needle" class="needle">
                                 </div>
                                 <div class="squares">
-                                    <div id="center-screen"></div>
+                                    <div id="center-screen">
+                                        <div class="live-dead-icon">
+                                            <img src="./items/panels/live-icon.png" alt="live-icon" class="live-icon">
+                                            <img src="./items/panels/dead-icon.png" alt="dead-icon" class="dead-icon">
+                                        </div>
+                                        <div class="live-dead-icon">
+                                            <img src="./items/panels/live-icon.png" alt="live-icon" class="live-icon">
+                                            <img src="./items/panels/dead-icon.png" alt="dead-icon" class="dead-icon">
+                                        </div>
+                                        <div class="live-dead-icon">
+                                            <img src="./items/panels/live-icon.png" alt="live-icon" class="live-icon">
+                                            <img src="./items/panels/dead-icon.png" alt="dead-icon" class="dead-icon">
+                                        </div>
+                                        <div class="live-dead-icon">
+                                            <img src="./items/panels/live-icon.png" alt="live-icon" class="live-icon">
+                                            <img src="./items/panels/dead-icon.png" alt="dead-icon" class="dead-icon">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="circles">
                                     <img src="./items/panels/needle.png" alt="needle" class="needle">
+                                    <!-- <div class="circle-container" id="speed-container">
+                                        <div id="speed-in">
+                                            <svg x="0px" y="0px" width="350" height="300" viewBox="0 0 350 300">
+                                                <defs>
+                                                    <path id="curve"
+                                                        d="M40,180c0-60.751,49.248-110,110-110c60.751,0,110,49.249,110,110" />
+                                                </defs>
+                                                <text fill="white" class="curved-text">
+                                                    <textPath xlink:href="#curve" text-anchor="middle" startOffset="50%"
+                                                        id="fuel">SPEED</textPath>
+                                                </text>
+                                            </svg>
+                                        </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
                         <div id="controls">
                             <div id="control-left">
-                                <h4 class="w-100 px-4 pt-4 pb-0 d-flex justify-content-center" style="color: white;">BOOSTERS</h4>
+                                <h4 class="w-100 px-4 pt-4 pb-0 d-flex justify-content-center" style="color: white;">
+                                    BOOSTERS</h4>
                                 <div class="w-100 px-4 pt-1 pb-0">
                                     <ul class="p-0 w-100" style="border-radius: 10px; overflow: scroll !important;">
                                         <li class="w-100 mb-2" style="height: 120px;"></li>
@@ -64,7 +132,7 @@
                                         <li class="w-100 mb-2" style="height: 120px;"></li>
                                         <li class="w-100 mb-2" style="height: 120px;"></li>
                                         <li class="w-100 mb-2" style="height: 120px;"></li>
-                                        <li class="w-100" style="height: 120px; margin-bottom: 200px;"></li>
+                                        <li class="w-100" style="height: 120px; margin-bottom: 70px;"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -83,7 +151,7 @@
                                         <li class="w-100 mb-2" style="height: 240px;"></li>
                                         <li class="w-100 mb-2" style="height: 240px;"></li>
                                         <li class="w-100 mb-2" style="height: 240px;"></li>
-                                        <li class="w-100 h-50" style="margin-bottom: 200px;"></li>
+                                        <li class="w-100" style="height: 240px; margin-bottom: 70px;"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -92,6 +160,7 @@
                 </div>
             </div>
 
+            <!-- ========== GAME BODY ========== -->
             <div id="game-body">
 
                 <button id="music-button">
@@ -149,6 +218,7 @@
 <script src="./js/dragDetector.js"></script>
 <script src="./js/background.js"></script>
 <script src="./js/music.js"></script>
+<script src="./js/liveDead.js"></script>
 <script>
     window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
