@@ -293,10 +293,10 @@ h6 {
     align-items: center;
 }
 #panel-control #controls #control-center {
-    height: calc((112vw - 100vw * (606 / 1177)) * (1212 / 3000));
-    width: calc(112vw - 100vw * (606 / 1177));
+    height: 82%;
+    width: calc(100vw - 100vw * (606 / 1177));
     background: url('./items/panels/bike-panel-bg.png') no-repeat center bottom;
-    background-size: auto 100%;
+    background-size: 100% auto;
 }
 
 #panel-control #controls #control-right {
