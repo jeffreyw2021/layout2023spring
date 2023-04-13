@@ -93,7 +93,7 @@
                                     ARSENAL</h3>
                                 <div class="w-100 px-4 pt-1 pb-0">
                                     <ul class="p-0 w-100" style="border-radius: 10px; overflow: scroll !important;">
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
                                             <img src="./items/props/dimension-eliminator.png" alt="dimension"
                                                 class="item-img">
                                             <div class="item-desc">
@@ -112,7 +112,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
                                             <img src="./items/props/fire-bomb.png" alt="fire-bomb" class="item-img">
                                             <div class="item-desc">
                                                 <h4>Blaze Burst</h4>
@@ -130,7 +130,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
                                             <img src="./items/props/grenade.png" alt="grenade" class="item-img">
                                             <div class="item-desc">
                                                 <h4>Grenade</h4>
@@ -148,7 +148,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
                                             <img src="./items/props/katana.png" alt="katana" class="item-img">
                                             <div class="item-desc">
                                                 <h4>Katana</h4>
@@ -166,7 +166,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
                                             <img src="./items/props/wrench.png" alt="katana" class="item-img">
                                             <div class="item-desc">
                                                 <h5>Power Spanner</h5>
@@ -184,7 +184,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 roadblock" style="height: 120px;">
                                             <img src="./items/props/acid.png" alt="banana" class="item-img">
                                             <div class="item-desc">
                                                 <h4>Annihilinum</h4>
@@ -202,7 +202,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100 mb-2" style="height: 120px;">
+                                        <li class="w-100 mb-2 roadblock" style="height: 120px;">
                                             <img src="./items/props/banana.png" alt="banana" class="item-img">
                                             <div class="item-desc">
                                                 <h4>Banana</h4>
@@ -430,7 +430,8 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="w-100" style="background: transparent; height: 120px; margin-bottom: 70px;"></li>
+                                        <li class="w-100"
+                                            style="background: transparent; height: 120px; margin-bottom: 70px;"></li>
                                     </ul>
                                 </div>
                             </div>
@@ -442,15 +443,50 @@
             <!-- ========== GAME BODY ========== -->
             <div id="game-body">
 
-                <button id="music-button">
-                    <i class="fa-solid fa-play">
-                        <span style="margin-left:5px;">PLAY MUSIC</span>
-                    </i>
-                    <i class="fa-solid fa-pause" style="display:none;">
-                        <span style="margin-left:5px;">PAUSE MUSIC</span>
-                    </i>
-                </button>
-                <audio id="music-player" preload="none"></audio>
+                <div id="game-bg-cover">
+                    <button id="music-button">
+                        <i class="fa-solid fa-play">
+                            <span style="margin-left:5px;">PLAY MUSIC</span>
+                        </i>
+                        <i class="fa-solid fa-pause" style="display:none;">
+                            <span style="margin-left:5px;">PAUSE MUSIC</span>
+                        </i>
+                    </button>
+                    <audio id="music-player" preload="none"></audio>
+
+                    <div id="player-list">
+                        <div class="d-flex justify-content-center" id="player-list-btn">
+                            <i class="fa-solid fa-caret-down"></i>
+                            <i class="fa-solid fa-caret-up" style="display:none;"></i>
+                        </div>
+                        <div id="helmet-list">
+                            <div class="helmet-item">
+                                <img src="./items/player/purple/helmet-purple.png" alt="helmet" class="helmet">
+                                <p class="username">Nadia_Velvet88</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/red/helmet-red.png" alt="helmet" class="helmet">
+                                <p class="username">Johnny_Racer</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/white/helmet-white.png" alt="helmet" class="helmet">
+                                <p class="username">L0_V3er</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-black.png" alt="helmet" class="helmet">
+                                <p class="username">Max_Mach</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-yellow.png" alt="helmet" class="helmet">
+                                <p class="username">Lily_Lightning</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-blue.png" alt="helmet" class="helmet">
+                                <p class="username">Riley_Rocket</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="game-bg">
                     <div class="layer-top d-flex justify-content-start align-items-end">
@@ -497,7 +533,9 @@
 <script src="./js/dragDetector.js"></script>
 <script src="./js/background.js"></script>
 <script src="./js/music.js"></script>
+<script src="./js/playerList.js"></script>
 <script src="./js/liveDead.js"></script>
+<script src="./js/itemList.js"></script>
 <script>
     window.addEventListener("load", function () {
         const loader = document.getElementById("loader");
