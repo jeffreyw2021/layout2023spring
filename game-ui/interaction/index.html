@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKAMOTO</title>
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/c54adec46d.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: #020204;">
+    <div id="loader" class="loader"></div>
+    <main>
+
+        <!-- ========== OPERATION BODY ========== -->
+        <div style="width: 100vw; height: 100vh; overflow-y: hidden;">
+
+            <div id="operation-body" class="w-100 position-absolute d-flex flex-column justify-content-start bottom-0">
+                <!-- top bar -->
+                <div class="w-100 d-flex justify-content-center align-items-center" id="dragbar">
+                    <div class="d-flex justify-content-center align-items-center" id="dragbarbtn">
+                        <div class="d-flex justify-content-center align-items-center btn-realistic rounded-pill">
+                            <div id="dragbarIcons" class="d-flex" style="font-size: 3rem; color:#ff5ae4">
+                                <i class="fa-solid fa-caret-up" id="upIcon" style="display:none;"></i>
+                                <i class="fa-solid fa-caret-down" id="downIcon" style="display:block;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="control-body">
+                    <!-- bike panel control -->
+                    <div class="d-flex justify-content-center" id="panel-control">
+                        <div class="label-container">
+                            <div class="d-flex" style="width:104%; margin-top: -50px;">
+                            </div>
+                        </div>
+                        <div class="h-100 d-flex align-items-end">
+                            <div id="panel-image">
+                                <div id="data-display">
+                                    <div class="circles">
+                                        <img src="./items/panels/needle.png" alt="needle" class="needle">
+                                    </div>
+                                    <div class="squares">
+                                        <div id="center-screen">
+                                            <div class="live-dead-icon">
+                                                <img src="./items/panels/live-icon.png" alt="live-icon"
+                                                    class="live-icon">
+                                                <img src="./items/panels/dead-icon.png" alt="dead-icon"
+                                                    class="dead-icon">
+                                            </div>
+                                            <div class="live-dead-icon">
+                                                <img src="./items/panels/live-icon.png" alt="live-icon"
+                                                    class="live-icon">
+                                                <img src="./items/panels/dead-icon.png" alt="dead-icon"
+                                                    class="dead-icon">
+                                            </div>
+                                            <div class="live-dead-icon">
+                                                <img src="./items/panels/live-icon.png" alt="live-icon"
+                                                    class="live-icon">
+                                                <img src="./items/panels/dead-icon.png" alt="dead-icon"
+                                                    class="dead-icon">
+                                            </div>
+                                            <div class="live-dead-icon">
+                                                <img src="./items/panels/live-icon.png" alt="live-icon"
+                                                    class="live-icon">
+                                                <img src="./items/panels/dead-icon.png" alt="dead-icon"
+                                                    class="dead-icon">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circles">
+                                        <img src="./items/panels/needle.png" alt="needle" class="needle">
+                                        <!-- <div class="circle-container" id="speed-container">
+                                        <div id="speed-in">
+                                            <svg x="0px" y="0px" width="350" height="300" viewBox="0 0 350 300">
+                                                <defs>
+                                                    <path id="curve"
+                                                        d="M40,180c0-60.751,49.248-110,110-110c60.751,0,110,49.249,110,110" />
+                                                </defs>
+                                                <text fill="white" class="curved-text">
+                                                    <textPath xlink:href="#curve" text-anchor="middle" startOffset="50%"
+                                                        id="fuel">SPEED</textPath>
+                                                </text>
+                                            </svg>
+                                        </div>
+                                    </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="controls">
+                            <div id="control-left">
+                                <h3 class="w-100 px-4 pt-4 pb-0 d-flex justify-content-center item-list-title">
+                                    ARSENAL</h3>
+                                <div class="w-100 pb-0 left-in">
+                                    <ul class="p-0 w-100" style="border-radius: 10px; overflow: scroll !important;">
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/dimension-eliminator.png" alt="dimension"
+                                                    class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Eliminator</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Offensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>4</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>100%</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/fire-bomb.png" alt="fire-bomb" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Blaze Burst</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Offensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>1</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>20</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/grenade.png" alt="grenade" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Grenade</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Offensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>1</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>10</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/katana.png" alt="katana" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Katana</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Offensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>2</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>1</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 offensive" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/wrench.png" alt="katana" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Power Spanner</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Offensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>2</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>1</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 roadblock" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/acid.png" alt="banana" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Annihilinum</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Roadblock</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>3</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>5</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2 roadblock" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/banana.png" alt="banana" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Banana</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Roadblock</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Damage</p>
+                                                    <p>1</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Area</p>
+                                                    <p>1</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/helmet.png" alt="helmet" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Demon Blessing</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Defensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Defense</p>
+                                                    <p>99%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>6s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/force-field.png" alt="helmet" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Force Shield</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Defensive</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Defense</p>
+                                                    <p>50%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>10s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/godzilla.png" alt="godzilla" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Godzilla Totem</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Summoner</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Target</p>
+                                                    <p>Godzilla</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>HP</p>
+                                                    <p>20</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 item-placeholder"
+                                            style="background: transparent; height: 120px; margin-bottom: 70px;">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="control-center"></div>
+                            <div id="control-right">
+                                <h3 class="w-100 px-4 pt-4 pb-0 d-flex justify-content-center item-list-title">
+                                    BOOSTERS</h3>
+                                <div class="w-100 pb-0 right-in">
+                                    <ul class="p-0 w-100" style="border-radius: 10px; overflow: scroll !important;">
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/supernova.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Supernova</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Booster</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Boost</p>
+                                                    <p>500%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>1s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/fire-booster.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Flame Jet</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Booster</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Boost</p>
+                                                    <p>100%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>5s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/tequila.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Tequila</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Booster</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Boost</p>
+                                                    <p>20% (-1 HP)</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>15s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/redbull.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Energy Drink</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Booster</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Boost</p>
+                                                    <p>5%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Duration</p>
+                                                    <p>10s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/potion.png" alt="potion" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Basic Potion</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Healing</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Effect</p>
+                                                    <p>+1 HP</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Storage</p>
+                                                    <p>5 (max)</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/revival-potion.png" alt="potion"
+                                                    class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Revival Potion</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Healing</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Effect</p>
+                                                    <p>+4 HP</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Storage</p>
+                                                    <p>1</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/energy-boost.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h5>Energy Plugin</h5>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Fuel</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>capacity</p>
+                                                    <p>25%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Refill time</p>
+                                                    <p>1.5s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 mb-2" style="height: 120px;">
+                                            <div
+                                                class="h-100 d-flex justify-content-center align-items-center item-img-container">
+                                                <img src="./items/props/gasoline.png" alt="boost" class="item-img">
+                                            </div>
+                                            <div class="item-desc">
+                                                <h4>Gasoline</h4>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Type</p>
+                                                    <p>Fuel</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>capacity</p>
+                                                    <p>10%</p>
+                                                </div>
+                                                <div class="w-100 d-flex justify-content-between">
+                                                    <p>Refill time</p>
+                                                    <p>0.5s</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="w-100 item-placeholder"
+                                            style="background: transparent; height: 120px; margin-bottom: 70px;">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== GAME BODY ========== -->
+            <div id="game-body">
+
+                <div id="game-bg-cover">
+                    <button id="music-button">
+                        <i class="fa-solid fa-play">
+                            <span style="margin-left:5px;">PLAY MUSIC</span>
+                        </i>
+                        <i class="fa-solid fa-pause" style="display:none;">
+                            <span style="margin-left:5px;">PAUSE MUSIC</span>
+                        </i>
+                    </button>
+                    <audio id="music-player" preload="none"></audio>
+
+                    <div id="player-list">
+                        <div class="d-flex justify-content-center" id="player-list-btn">
+                            <i class="fa-solid fa-caret-down"></i>
+                            <i class="fa-solid fa-caret-up" style="display:none;"></i>
+                        </div>
+                        <div id="helmet-list">
+                            <div class="helmet-item">
+                                <img src="./items/player/purple/helmet-purple.png" alt="helmet" class="helmet">
+                                <p class="username">Nadia_Velvet88</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/red/helmet-red.png" alt="helmet" class="helmet">
+                                <p class="username">Johnny_Racer</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/white/helmet-white.png" alt="helmet" class="helmet">
+                                <p class="username">L0_V3er</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-black.png" alt="helmet" class="helmet">
+                                <p class="username">Max_Mach</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-yellow.png" alt="helmet" class="helmet">
+                                <p class="username">Lily_Lightning</p>
+                            </div>
+                            <div class="helmet-item">
+                                <img src="./items/player/helmet-blue.png" alt="helmet" class="helmet">
+                                <p class="username">Riley_Rocket</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="game-bg">
+                    <div class="layer-top d-flex justify-content-start align-items-end">
+                        <!-- red -->
+                        <div class="player-container" style="z-index:3;" id="red">
+                            <div class="player">
+                                <img src="./items/player/red/red-frame.png" alt="frame" class="frame">
+                                <div class="wheels d-flex justify-content-between">
+                                    <img src="./items/player/red/red-back.png" alt="backWheel" class="back">
+                                    <img src="./items/player/red/red-front.png" alt="backWheel" class="front">
+                                </div>
+                            </div>
+                            <div class="player-shadow"></div>
+                        </div>
+                        <!-- purple -->
+                        <div class="player-container" style="z-index:2;" id="purple">
+                            <div class="player">
+                                <img src="./items/player/purple/purple-frame.png" alt="frame" class="frame">
+                                <div class="wheels d-flex justify-content-between">
+                                    <img src="./items/player/purple/purple-back.png" alt="backWheel" class="back">
+                                    <img src="./items/player/purple/purple-front.png" alt="backWheel" class="front">
+                                </div>
+                            </div>
+                            <div class="player-shadow"></div>
+                        </div>
+                        <!-- white -->
+                        <div class="player-container" style="z-index:1;" id="white">
+                            <div class="player">
+                                <img src="./items/player/white/white-frame.png" alt="frame" class="frame">
+                                <div class="wheels d-flex justify-content-between">
+                                    <img src="./items/player/white/white-back.png" alt="backWheel" class="back">
+                                    <img src="./items/player/white/white-front.png" alt="backWheel" class="front">
+                                </div>
+                            </div>
+                            <div class="player-shadow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+<script src="./js/dragDetector.js"></script>
+<script src="./js/background.js"></script>
+<script src="./js/music.js"></script>
+<script src="./js/playerList.js"></script>
+<script src="./js/liveDead.js"></script>
+<script src="./js/itemList.js"></script>
+<script>
+    window.addEventListener("load", function () {
+        const loader = document.getElementById("loader");
+        loader.style.display = "none";
+    });
+</script>
+
+</html>
