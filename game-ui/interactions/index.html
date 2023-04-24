@@ -26,6 +26,7 @@
             <div id="operation-body" class="w-100 position-absolute d-flex flex-column justify-content-start bottom-0">
                 <!-- top bar -->
                 <div class="w-100 d-flex justify-content-center align-items-center" id="dragbar">
+                    <span class="topspeedfuel top-fuel" id="top-fuel"></span>
                     <div class="d-flex justify-content-center align-items-center" id="dragbarbtn">
                         <div class="d-flex justify-content-center align-items-center btn-realistic rounded-pill">
                             <div id="dragbarIcons" class="d-flex" style="font-size: 3rem; color:#ff5ae4">
@@ -34,6 +35,7 @@
                             </div>
                         </div>
                     </div>
+                    <span class="topspeedfuel" id="top-speed"></span>
                 </div>
 
                 <div id="control-body">
@@ -79,20 +81,6 @@
                                     </div>
                                     <div class="circles">
                                         <img src="./items/panels/needle.png" alt="needle" class="needle">
-                                        <!-- <div class="circle-container" id="speed-container">
-                                        <div id="speed-in">
-                                            <svg x="0px" y="0px" width="350" height="300" viewBox="0 0 350 300">
-                                                <defs>
-                                                    <path id="curve"
-                                                        d="M40,180c0-60.751,49.248-110,110-110c60.751,0,110,49.249,110,110" />
-                                                </defs>
-                                                <text fill="white" class="curved-text">
-                                                    <textPath xlink:href="#curve" text-anchor="middle" startOffset="50%"
-                                                        id="fuel">SPEED</textPath>
-                                                </text>
-                                            </svg>
-                                        </div>
-                                    </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -520,6 +508,25 @@
                     </button>
                     <audio id="music-player" preload="none"></audio>
 
+                    <div id="top-hpDisplay">
+                        <div class="live-dead-icon ld-small">
+                            <img src="./items/panels/live-icon-glow.png" alt="live-icon" class="live-icon-sm">
+                            <img src="./items/panels/dead-icon-sm-glow.png" alt="dead-icon" class="dead-icon-sm">
+                        </div>
+                        <div class="live-dead-icon ld-small">
+                            <img src="./items/panels/live-icon-glow.png" alt="live-icon" class="live-icon-sm">
+                            <img src="./items/panels/dead-icon-sm-glow.png" alt="dead-icon" class="dead-icon-sm">
+                        </div>
+                        <div class="live-dead-icon ld-small">
+                            <img src="./items/panels/live-icon-glow.png" alt="live-icon" class="live-icon-sm">
+                            <img src="./items/panels/dead-icon-sm-glow.png" alt="dead-icon" class="dead-icon-sm">
+                        </div>
+                        <div class="live-dead-icon ld-small">
+                            <img src="./items/panels/live-icon-glow.png" alt="live-icon" class="live-icon-sm">
+                            <img src="./items/panels/dead-icon-sm-glow.png" alt="dead-icon" class="dead-icon-sm">
+                        </div>
+                    </div>
+
                     <div id="player-list">
                         <div class="d-flex justify-content-center" id="player-list-btn">
                             <i class="fa-solid fa-caret-down"></i>
@@ -552,6 +559,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div id="game-effect">
+
                 </div>
 
                 <div id="game-bg">
@@ -596,12 +607,14 @@
     </main>
 </body>
 
-<script src="./js/dragDetector.js"></script>
+<!-- <script src="./js/dragDetector.js"></script> -->
 <script src="./js/background.js"></script>
 <script src="./js/music.js"></script>
 <script src="./js/playerList.js"></script>
 <script src="./js/liveDead.js"></script>
 <script src="./js/itemList.js"></script>
+<script src="./js/playerJump.js"></script>
+<!-- <script src="./js/throwItem.js"></script> -->
 <script>
     window.addEventListener("load", function () {
         const loader = document.getElementById("loader");

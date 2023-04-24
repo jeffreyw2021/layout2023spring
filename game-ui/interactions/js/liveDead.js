@@ -39,3 +39,45 @@ document.addEventListener('keydown', function (event) {
         }
     }
 });
+
+// select all the live and dead icons
+const liveIconssm = document.querySelectorAll('.live-icon-sm');
+const deadIconssm = document.querySelectorAll('.dead-icon-sm');
+var smclickCount = 0;
+var smbackToLive = false;
+
+// set up event listener for the "x" key
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyX') {
+        if (smclickCount == 4) {
+            smbackToLive = true;
+        }
+        if (smclickCount == 0) {
+            smbackToLive = false;
+        }
+        if (smclickCount < 4 && smbackToLive == false) {
+            for (let i = liveIconssm.length - 1; i >= 0; i--) {
+                const liveIcon = liveIconssm[i];
+                const deadIcon = deadIconssm[i];
+                if (liveIcon.style.display !== 'none') {
+                    liveIcon.style.display = 'none';
+                    deadIcon.style.display = 'block';
+                    break;
+                }
+            }
+            smclickCount++;
+        }
+        if (smclickCount >= 0 && smbackToLive == true) {
+            for (let i = 0; i <= deadIconssm.length - 1; i++) {
+                const liveIcon = liveIconssm[i];
+                const deadIcon = deadIconssm[i];
+                if (deadIcon.style.display !== 'none') {
+                    liveIcon.style.display = 'block';
+                    deadIcon.style.display = 'none';
+                    break;
+                }
+            }
+            smclickCount--;
+        }
+    }
+});

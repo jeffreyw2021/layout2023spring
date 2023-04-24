@@ -74,7 +74,7 @@ font-family: 'Rubik Pixels', cursive;
     margin-bottom: 5px;
 }
 
-.btn-realistic:hover {
+/* .btn-realistic:hover {
     background-color: #20176a;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -83,7 +83,7 @@ font-family: 'Rubik Pixels', cursive;
     background-color: #110c3a;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.15);
     transform: translateY(1px);
-}
+} */
 
 #dragbarIcons i {
     animation: iconGlowing 5s ease-in-out infinite;
@@ -409,6 +409,32 @@ li:hover {
     outline: none;
     z-index: 100;
 }
+#top-hpDisplay{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-radius: 10px;
+    outline: none;
+}
+.ld-small{
+    height: 90%;
+}
+.live-icon-sm, .dead-icon-sm{
+    height: 100%;
+    max-width: 100%;
+}
+.dead-icon-sm{
+    display:none;
+}
+.topspeedfuel{
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    white-space: nowrap;
+    padding: 0 20px;
+}
+
 #player-list {
     padding: 7.5px 15px 0px 15px;
     border-radius: 10px;
@@ -705,63 +731,6 @@ li:hover {
     }
 }
 
-/* @media (max-width: 1000px) {
-    .item-desc{
-        padding-right: 15px;
-    }
-    .item-desc h5{
-        font-size: 0.8rem;
-    }
-    .item-desc h4{
-        font-size: 0.9rem;
-    }
-    .item-desc p{
-        margin: 1px 0;
-        font-size: 0.65rem;
-    }
-} */
-
-/* @media (max-width: 970px) {
-    .item-list-title{
-        font-size: 1.2rem;
-    }
-    .item-img{
-        margin-right: 0;
-        margin-bottom: 30px;
-    }
-    .item-desc{
-        margin-top: 30px;
-        margin-bottom: 5px;
-        margin-right: 0;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-    }
-    .item-desc h4,h5{
-        margin: 0;
-    }
-    .item-desc h5{
-        font-size: 0.9rem;
-    }
-    .item-desc h4{
-        font-size: 1.1rem;
-    }
-    #control-left ul li {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-    #control-right ul li {
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-    .item-desc p{
-        padding: 0px;
-        display:none;
-    }
-} */
-
 @media (max-width: 1020px) {
     .item-list-title{
         font-size: 1.5rem;
@@ -835,4 +804,9 @@ li:hover {
     .item-placeholder{
         height: 20px !important;
     }
+
+    #top-hpDisplay{
+        display: flex;
+    }
+   
 }

@@ -5,8 +5,10 @@ let speed = 7;
 let acceleration = 0.0001;
 let bikeSpeed = 5.98; // meters per second
 const needles = document.querySelectorAll('.needle');
+const topSpeedElem = document.getElementById('top-speed');
+const topFuelElem = document.getElementById('top-fuel');
 
-setInterval(moveBackground, 5);x
+setInterval(moveBackground, 5);
 
 function updateNeedleRotation() {
   const minRotation = [120, -120]; // First element for second needle, second element for first needle
@@ -27,6 +29,13 @@ function updateNeedleRotation() {
   }
 }
 
+function calculateFuelLevel() {
+  const firstNeedle = needles[0];
+  const currentRotation = parseFloat(firstNeedle.style.transform.match(/rotate\((-?\d+(?:\.\d+)?)deg\)/)[1]);
+  const fuelPercentage = 100 * (currentRotation + 120) / 240;
+  return fuelPercentage.toFixed(2);
+}
+
 function moveBackground() {
   if (speed <= 10) {
     marginLeft -= speed;
@@ -34,6 +43,10 @@ function moveBackground() {
     speed += acceleration;
     bikeSpeed = speed * 5.98 / 60;
     updateNeedleRotation();
+
+    // Update top-speed and top-fuel
+    topSpeedElem.textContent = `Speed: ${bikeSpeed.toFixed(2)} km/h`;
+    topFuelElem.textContent = `Fuel level: ${calculateFuelLevel()}%`;
 
     if (speed >= 7) {
       const purple = document.querySelector('#purple');
@@ -51,5 +64,9 @@ function moveBackground() {
     marginLeft -= speed;
     layerTop.style.backgroundPosition = `${marginLeft}px bottom`;
     bikeSpeed = speed * 5.98 / 60;
+
+    // Update top-speed and top-fuel
+    topSpeedElem.textContent = `Speed: ${bikeSpeed.toFixed(2)} km/h`;
+    topFuelElem.textContent = `Fuel levl: ${calculateFuelLevel()}%`;
   }
 }
