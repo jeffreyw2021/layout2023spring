@@ -291,6 +291,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 #panel-control #controls #control-center {
     height: 82%;
@@ -321,6 +322,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 ul {
@@ -335,6 +337,7 @@ ul {
     text-shadow: 0 0 10px #fff; 
     animation: textGlowing 5s ease-in-out infinite;
 }
+
 @keyframes textGlowing {
     0% {
         color: #fff;
